@@ -1,4 +1,4 @@
-name: Feature
+name: Agile Feature
 description: Define a high-level capability or deliverable (Feature) for PlugHub, to be broken down into user stories and tasks.
 title: "[Feature] <Short, descriptive title>"
 labels: feature

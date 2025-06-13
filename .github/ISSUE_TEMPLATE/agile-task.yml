@@ -1,4 +1,4 @@
-name: Task
+name: Agile Task
 description: Track a discrete, atomic action or work item.
 title: "[Task] <Short, descriptive title>"
 labels: task
