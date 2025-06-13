@@ -112,7 +112,7 @@ If you have an idea for the next great PlugHub feature, let us know by following
     - Ask questions or discuss implementation details in the issue thread, or join our [Discord](https://discord.com/invite/mWDHDqkzeR) for real-time discussion.
     - If you find a similar request that’s missing something critical, comment on it to expand the discussion.
 2. **Create a New Documentation Request:**  
-   Open an [Issue](../../issues/new?template=request-documentation.md) explaining your proposed documentation changes or additions.
+   Open a [Documentation Request](../../issues/new?template=request-documentation.md) explaining your proposed documentation changes or additions.
     - Be as detailed as possible: describe what the documentation should cover and what key areas need to be addressed.
 3. **Participate in the Review:**  
    Others may ask questions or request changes, so check back or enable notifications.
