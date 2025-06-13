@@ -93,7 +93,7 @@ If you have an idea for the next great PlugHub feature, let us know by following
 
 ### How to Open a Feature Request
 1. **Check for Existing Requests:**  
-   Search [open feature requests](../../issues?q=label%3Aenhancement+is%3Aopen+-label%3Adocumentation) to see if your idea has already been suggested.
+   Search [open feature requests](../../issues?q=label%3Aenhancement+is%3Aopen) to see if your idea has already been suggested.
     - If a similar request exists, expand on it by commenting rather than opening a duplicate.
 2. **Create a New Feature Request:**  
    Open a [Feature Request](../../issues/new?template=request-feature.md) on the Issues Tracker.
@@ -138,7 +138,7 @@ Unlike traditional projects where documentation is often an afterthought, PlugHu
 
 ### How to Find Documentation Tasks
 1. **Check the Issue Tracker:**  
-   Look for [Documentation Requests](../../issues?q=label%3Aenhancement,documentation,approved+is%3Aopen+no%3Aassignee) that are open, “approved,” and unassigned.  
+   Look for [Documentation Requests](../../issues?q=label%3Adocumentation,approved+is%3Aopen+no%3Aassignee) that are open, “approved,” and unassigned.  
    _Only begin work on issues that meet these criteria._
 2. **Review Existing Documentation:**  
    There may be bugs or outdated sections in the current docs:
