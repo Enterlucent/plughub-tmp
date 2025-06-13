@@ -2,7 +2,6 @@ name: Feature
 description: Suggest a new feature or enhancement for PlugHub.
 title: "[Feature] <Short, descriptive title>"
 labels: feature
-assignees: ''
 
 body:
   - type: markdown

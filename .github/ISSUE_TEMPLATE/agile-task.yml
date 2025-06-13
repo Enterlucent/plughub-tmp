@@ -2,7 +2,6 @@ name: Task
 description: Track a discrete, atomic action or work item.
 title: "[Task] <Short, descriptive title>"
 labels: task
-assignees: ''
 
 body:
   - type: markdown
