@@ -14,7 +14,6 @@ With PlugHub, you can rapidly extend functionality, validate plugin compatibilit
 - [Contributing](#contributing)
 - [Authors](#authors)
 - [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ## Quick Start
 1. **Install PlugHub**  
@@ -34,7 +33,7 @@ With PlugHub, you can rapidly extend functionality, validate plugin compatibilit
 ### How to Get Information
 - **Documentation** – Comprehensive guides and references for PlugHub:
     - [Project Docs](docs/)
-    - [GitHub Pages](../../wiki) <!-- If you use GitHub Pages from a `docs/` folder, keep as is. If using the wiki, use this relative link. -->
+    - [GitHub Pages](https://enterlucent.github.io/plughub/)
     - [Wiki](../../wiki)
     - [Discussions](../../discussions)
 - **Community Chat** – Join our [Discord](https://discord.com/invite/mWDHDqkzeR) for real-time support and collaboration.
@@ -57,7 +56,7 @@ With PlugHub, you can rapidly extend functionality, validate plugin compatibilit
    Review [open bug reports](../../issues?q=label%3Abug+is%3Aopen).
    - Add details or reopen if your issue matches an existing report.
 2. **File a Bug Report:**  
-   Use the [Bug Report template](../../issues/new?template=bug_report.md).
+   Use the [Bug Report template](../../issues/new?template=report-bug.md).
    - Prefix your title with `[BUG]` (e.g., `[BUG] Plugin fails to load on startup`).
    - Include detailed steps to reproduce, expected and actual behavior, and environment details.
 3. **Monitor and Respond:**  
@@ -68,7 +67,7 @@ With PlugHub, you can rapidly extend functionality, validate plugin compatibilit
    Search [open feature requests](../../issues?q=label%3Aenhancement+is%3Aopen).
    - Comment to expand on existing requests; avoid duplicates.
 2. **Submit a Feature Request:**  
-   Open a [Feature Request](../../issues/new?template=feature_request.md).
+   Open a [Feature Request](../../issues/new?template=request-feature.md).
    - Reference any related documentation needs in your request.
    - Clearly describe the feature, its purpose, and potential impact.
 3. **Stay Engaged:**  
