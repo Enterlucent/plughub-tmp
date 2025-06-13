@@ -1,0 +1,52 @@
+name: Task
+description: Track a discrete, atomic action or work item.
+title: "[Task] <Short, descriptive title>"
+labels: task
+assignees: ''
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Task
+
+        Please describe the specific, actionable work item to be completed.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Task Description
+      description: What exactly needs to be done? Be concise and specific.
+      placeholder: e.g., "Refactor PluginLoader to use async methods."
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: What are the conditions for this task to be considered complete?
+      placeholder: |
+        - Code compiles without errors
+        - All related tests pass
+        - Documentation updated (if needed)
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies or Blockers
+      description: List any issues or tasks that must be completed before this task can begin.
+      placeholder: e.g., "#123 must be completed first."
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Additional Notes
+      description: Any other context, links, or information relevant to this task.
+      placeholder: e.g., "See related discussion in #456."
+    validations:
+      required: false

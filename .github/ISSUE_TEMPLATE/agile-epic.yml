@@ -1,0 +1,109 @@
+name: Epic
+description: Track a high-level initiative or feature set composed of multiple related issues.
+title: "[EPIC] <Epic Title>"
+labels: epic
+assignees: ''
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Epic Summary
+        Describe the high-level goal or initiative this epic represents.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Epic Summary
+      description: |
+        What problem does this epic solve?  
+        Why is it important for the project?
+      placeholder: e.g., "Implement plugin dependency management to improve modularity and maintainability."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Success Criteria
+        What does “done” look like for this epic? List acceptance criteria or key deliverables.
+
+  - type: textarea
+    id: success-criteria
+    attributes:
+      label: Success Criteria
+      description: |
+        List clear, measurable outcomes.  
+        What must be delivered or completed for this epic to be considered done?
+      placeholder: |
+        - All related user stories/features implemented
+        - Documentation updated
+        - Automated tests passing
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Task Breakdown
+        List the issues, user stories, or tasks that make up this epic. Use GitHub task lists and link to issues as they are created.
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Task Breakdown
+      description: |
+        Use task lists and reference related issues (e.g., `- [ ] #123 Implement plugin loader`)
+      placeholder: |
+        - [ ] #<issue-number> Short description of sub-task or user story
+        - [ ] #<issue-number> Another sub-task
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Additional Context / References
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context / References
+      description: Add any background, links, designs, or discussions relevant to this epic.
+      placeholder: |
+        - [Related discussion](https://github.com/your-org/your-repo/discussions/...)
+        - [Design doc](https://github.com/your-org/your-repo/docs/...)
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Stakeholders
+
+  - type: input
+    id: product-owner
+    attributes:
+      label: Product Owner
+      description: Who is the product owner for this epic?
+      placeholder: GitHub username or name
+    validations:
+      required: false
+
+  - type: input
+    id: tech-lead
+    attributes:
+      label: Tech Lead
+      description: Who is the technical lead for this epic?
+      placeholder: GitHub username or name
+    validations:
+      required: false
+
+  - type: input
+    id: contributors
+    attributes:
+      label: Contributors
+      description: List any primary contributors or stakeholders.
+      placeholder: GitHub usernames or names
+    validations:
+      required: false
