@@ -1,4 +1,4 @@
-name: Feature Request
+name: Feature
 description: Suggest a new feature or enhancement for PlugHub.
 title: "[Feature] <Short, descriptive title>"
 labels: feature
@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Feature Request
+        ## Feature
 
         Thank you for helping improve PlugHub! Please fill out the following details to help us understand your feature idea.
 

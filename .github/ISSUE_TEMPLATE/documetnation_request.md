@@ -2,7 +2,7 @@
 name: Documentation Request
 about: Request new or improved documentation for PlugHub
 title: "<short summary of your request>"
-labels: enhancement,documentation
+labels: documentation
 ---
 
 ## What documentation needs attention?
