@@ -108,7 +108,7 @@ If you have an idea for the next great PlugHub feature, let us know by following
 
 ### How to Open a Documentation Request
 1. **Check for Existing Documentation Requests:**  
-   Review [open documentation requests](../../issues?q=label%3Aenhancement,documentation+is%3Aopen) to see if your suggestion has already been made.
+   Review [open documentation requests](../../issues?q=label%documentation+is%3Aopen) to see if your suggestion has already been made.
     - Ask questions or discuss implementation details in the issue thread, or join our [Discord](https://discord.com/invite/mWDHDqkzeR) for real-time discussion.
     - If you find a similar request that’s missing something critical, comment on it to expand the discussion.
 2. **Create a New Documentation Request:**  
