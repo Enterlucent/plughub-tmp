@@ -1,4 +1,4 @@
-name: CI
+name: Build and Publish Executable
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '8.0.x' # Adjust if your project uses a different version
 
       - name: Restore dependencies
         run: dotnet restore
@@ -27,9 +27,13 @@ jobs:
 
       - name: Run tests
         run: dotnet test --configuration Release --no-build --verbosity normal
+        # Remove or comment out if you have no tests
 
-      - name: Upload PlugHub.Desktop Release artifact
+      - name: Publish self-contained single-file executable (Windows x64)
+        run: dotnet publish PlugHub.Desktop/PlugHub.Desktop.csproj -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true -o ./publish/win-x64
+
+      - name: Upload published executable
         uses: actions/upload-artifact@v4
         with:
-          name: PlugHub-Desktop-Release
-          path: PlugHub.Desktop/bin/Release/net8.0/
+          name: PlugHub-Desktop-win-x64
+          path: ./publish/win-x64/
