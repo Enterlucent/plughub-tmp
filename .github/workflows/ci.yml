@@ -11,13 +11,18 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository (with LFS)
         uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      # Optionally, force LFS pull to ensure all objects are present (sometimes needed for reliability)
+      - name: Ensure LFS files are present
+        run: git lfs pull
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          # Use the same SDK as your local environment for consistency
           dotnet-version: '9.0.203'
 
       - name: Show .NET SDK info
