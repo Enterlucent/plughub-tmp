@@ -108,7 +108,7 @@ If you have an idea for the next great PlugHub feature, let us know by following
 
 ### How to Open a Documentation Request
 1. **Check for Existing Documentation Requests:**  
-   Review [open documentation requests](../../issues?q=label%documentation+is%3Aopen) to see if your suggestion has already been made.
+   Review [open documentation requests](../../issues?q=label%3Adocumentation+is%3Aopen) to see if your suggestion has already been made.
     - Ask questions or discuss implementation details in the issue thread, or join our [Discord](https://discord.com/invite/mWDHDqkzeR) for real-time discussion.
     - If you find a similar request that’s missing something critical, comment on it to expand the discussion.
 2. **Create a New Documentation Request:**  
@@ -165,7 +165,7 @@ Unlike traditional projects where documentation is often an afterthought, PlugHu
 Programmers are responsible for implementing features proposed by Product Designers, maintaining code quality, and integrating assets and documentation contributed by the community.
 
 ### How to Find Programming Tasks
-1. **Browse the [Issue Tracker](../../issues?q=label%3Aenhancement,bug,approved+is%3Aopen+no%3Aassignee+-label%3Adocumentation):**
+1. **Browse the [Issue Tracker](../../issues?q=label%3Aenhancement,bug,approved+is%3Aopen+no%3Aassignee):**
     - Look for open, “approved,” and unassigned issues labeled as `enhancement` or `bug`.
     - Ask questions in the Issue thread or join the [Discord](https://discord.com/invite/mWDHDqkzeR) server for real-time discussion.
     - **Only begin work on issues that are open, approved, and unassigned.**
