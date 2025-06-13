@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           # Use the same SDK as your local environment for consistency
-          dotnet-version: '9.0.x'
+          dotnet-version: '9.0.203'
 
       - name: Show .NET SDK info
         run: dotnet --info
