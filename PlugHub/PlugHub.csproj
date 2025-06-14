@@ -21,4 +21,8 @@
     <PackageReference Include="CommunityToolkit.Mvvm" />
     <PackageReference Include="FluentAvaloniaUI" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PlugHub.Shared\PlugHub.Shared.csproj" />
+  </ItemGroup>
 </Project>

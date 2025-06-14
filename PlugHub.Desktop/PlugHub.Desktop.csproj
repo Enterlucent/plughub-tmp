@@ -7,7 +7,6 @@
     <Nullable>enable</Nullable>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
 
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <PublishSingleFile>true</PublishSingleFile>
     <SelfContained>true</SelfContained>
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
@@ -16,10 +15,6 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
-
-  <ItemGroup>
-    <AvaloniaResource Include="Assets\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Avalonia.Desktop" />
@@ -33,4 +28,74 @@
   <ItemGroup>
     <ProjectReference Include="..\PlugHub\PlugHub.csproj" />
   </ItemGroup>
+
+
+
+  <!-- Custom Official Plugin Handling -->
+  <ItemGroup>
+    <Content Update="..\PlugHub.Plugins\**">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PluginsRoot>..\PlugHub.Plugins\</PluginsRoot>
+  </PropertyGroup>
+
+  <Target Name="BuildReleasePlugins" BeforeTargets="Publish">
+    <ItemGroup>
+      <PluginProjects Include="..\PlugHub.Plugins\*\*.csproj" />
+    </ItemGroup>
+    <MSBuild
+      Projects="@(PluginProjects)"
+      Targets="Build"
+      Properties="Configuration=Release" />
+  </Target>
+
+  <Target Name="BuildConfigurationPlugins" BeforeTargets="Build">
+    <ItemGroup>
+      <PluginProjects Include="..\PlugHub.Plugins\*\*.csproj" />
+    </ItemGroup>
+    <MSBuild
+      Projects="@(PluginProjects)"
+      Targets="Build"
+      Properties="Configuration=$(Configuration)" />
+  </Target>
+
+  <Target Name="CopyPluginArtifactsOnBuild" AfterTargets="Build" DependsOnTargets="BuildConfigurationPlugins">
+    <ItemGroup>
+      <PluginArtifactsRaw
+        Include="..\PlugHub.Plugins\*\bin\$(Configuration)\**\*"
+        Exclude="..\PlugHub.Plugins\*\bin\$(Configuration)\**\PlugHub.Shared.dll;..\PlugHub.Plugins\*\bin\$(Configuration)\**\PlugHub.Shared.pdb" />
+    </ItemGroup>
+    <ItemGroup>
+      <PluginArtifacts
+        Include="@(PluginArtifactsRaw)">
+        <PluginName>$([System.Text.RegularExpressions.Regex]::Match('%(PluginArtifactsRaw.Identity)', 'PlugHub\.Plugins\\([^\\]+)').Groups[1].Value)</PluginName>
+      </PluginArtifacts>
+    </ItemGroup>
+    <Copy
+      SourceFiles="@(PluginArtifacts)"
+      DestinationFiles="@(PluginArtifacts->'$(OutputPath)Plugins\%(PluginName)\%(Filename)%(Extension)')"
+      SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="CopyPluginArtifactsOnPublish" AfterTargets="Publish" DependsOnTargets="BuildReleasePlugins">
+    <ItemGroup>
+      <PluginArtifactsRaw
+        Include="..\PlugHub.Plugins\*\bin\Release\**\PlugHub.Plugin.*.*"
+        Exclude="..\PlugHub.Plugins\*\bin\Release\**\PlugHub.Shared.dll;..\PlugHub.Plugins\*\bin\Release\**\PlugHub.Shared.pdb" />
+    </ItemGroup>
+    <ItemGroup>
+      <PluginArtifacts
+        Include="@(PluginArtifactsRaw)">
+        <PluginName>$([System.Text.RegularExpressions.Regex]::Match('%(PluginArtifactsRaw.Identity)', 'PlugHub\.Plugins\\([^\\]+)').Groups[1].Value)</PluginName>
+      </PluginArtifacts>
+    </ItemGroup>
+    <Copy
+      SourceFiles="@(PluginArtifacts)"
+      DestinationFiles="@(PluginArtifacts->'$(PublishDir)Plugins\%(PluginName)\%(Filename)%(Extension)')"
+      SkipUnchangedFiles="true" />
+  </Target>
+
 </Project>
