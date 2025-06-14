@@ -16,7 +16,6 @@ jobs:
         with:
           lfs: true
 
-      # Optionally, force LFS pull to ensure all objects are present (sometimes needed for reliability)
       - name: Ensure LFS files are present
         run: git lfs pull
 
@@ -38,8 +37,7 @@ jobs:
         run: dotnet test --configuration Release --no-build --verbosity normal
 
       - name: Publish self-contained app (Windows x64)
-        run: dotnet publish PlugHub.Desktop/PlugHub.Desktop.csproj -c Release -r win-x64 --self-contained true /p:PublishSingleFile=false /p:PublishTrimmed=false -o ./publish/win-x64
-
+        run: dotnet publish PlugHub.Desktop/PlugHub.Desktop.csproj -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:PublishTrimmed=false -o ./publish/win-x64
       - name: List published files for debugging
         run: Get-ChildItem -Recurse ./publish/win-x64/
 
