@@ -46,20 +46,22 @@
     <ItemGroup>
       <PluginProjects Include="..\PlugHub.Plugins\*\*.csproj" />
     </ItemGroup>
-    <MSBuild
+    <MSBuild 
       Projects="@(PluginProjects)"
       Targets="Build"
-      Properties="Configuration=Release" />
+      Properties="Configuration=Release;
+                  RuntimeIdentifier=" />
   </Target>
 
   <Target Name="BuildConfigurationPlugins" BeforeTargets="Build">
     <ItemGroup>
       <PluginProjects Include="..\PlugHub.Plugins\*\*.csproj" />
     </ItemGroup>
-    <MSBuild
+    <MSBuild 
       Projects="@(PluginProjects)"
       Targets="Build"
-      Properties="Configuration=$(Configuration)" />
+      Properties="Configuration=$(Configuration);
+                  RuntimeIdentifier=" />
   </Target>
 
   <Target Name="CopyPluginArtifactsOnBuild" AfterTargets="Build" DependsOnTargets="BuildConfigurationPlugins">
