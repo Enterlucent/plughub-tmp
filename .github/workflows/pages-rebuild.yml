@@ -1,14 +1,35 @@
-name: Rebuild Pages
+name: Deploy GitHub Pages site
 
 on:
-  workflow_dispatch: # Allows manual triggering from the Actions tab
+  workflow_dispatch:  # Allows manual triggering from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read  # Required for v4
 
 jobs:
-  rebuild:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger GitHub Pages rebuild
-        run: |
-          curl --fail --request POST \
-            --url https://api.github.com/repos/${{ github.repository }}/pages/builds \
-            --header "Authorization: Bearer ${{ secrets.USER_TOKEN }}"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Build and upload your site as an artifact here
+      # - name: Build site
+      #   run: <your build command>
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v2
+      #   with:
+      #     path: <build output directory>
+
+      - name: Deploy GitHub Pages site
+        uses: actions/deploy-pages@v4.0.5
+        with:
+          token: ${{ github.token }}
+          timeout: 600000
+          error_count: 10
+          reporting_interval: 5000
+          artifact_name: github-pages
+          preview: false
