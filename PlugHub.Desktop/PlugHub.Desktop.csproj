@@ -46,16 +46,12 @@
 
   <Target Name="BuildReleasePlugins" BeforeTargets="PrepareForPublish" Condition="'$(IsPublishing)' == 'true'">
     <Message Text="Building Release plugin projects..." Importance="high" />
-
-    <!-- Build shared plugin libraries -->
     <ItemGroup>
       <PluginSharedProjects Include="..\PlugHub.Plugins\PlugHub.Shared.*\*.csproj" />
     </ItemGroup>
     <MSBuild Projects="@(PluginSharedProjects)"
              Targets="Build"
              Properties="Configuration=Release;Restore=true" />
-
-    <!-- Build plugin implementations -->
     <ItemGroup>
       <PluginImplProjects Include="..\PlugHub.Plugins\PlugHub.Plugin.*\*.csproj" />
     </ItemGroup>
@@ -68,8 +64,8 @@
     <Message Text="Copying plugin artifacts to publish output..." Importance="high" />
     <ItemGroup>
       <PluginArtifactsRaw Include="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\net8.0\**\*"
-                         Exclude="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\net8.0\**\PlugHub.Shared.dll;
-                                  ..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\net8.0\**\PlugHub.Shared.pdb" />
+                          Exclude="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\net8.0\**\PlugHub.Shared.dll;
+                                   ..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\net8.0\**\PlugHub.Shared.pdb" />
     </ItemGroup>
     <ItemGroup>
       <PluginArtifacts Include="@(PluginArtifactsRaw)">
@@ -83,15 +79,12 @@
 
   <Target Name="BuildConfigurationPlugins" BeforeTargets="PrepareForBuild" Condition="'$(IsPublishing)' == 'false'">
     <Message Text="Building $(Configuration) plugin projects..." Importance="high" />
-    <!-- Build shared plugin libraries -->
     <ItemGroup>
       <PluginSharedProjects Include="..\PlugHub.Plugins\PlugHub.Shared.*\*.csproj" />
     </ItemGroup>
     <MSBuild Projects="@(PluginSharedProjects)"
              Targets="Build"
              Properties="Configuration=$(Configuration);Restore=true" />
-
-    <!-- Build plugin implementations -->
     <ItemGroup>
       <PluginImplProjects Include="..\PlugHub.Plugins\PlugHub.Plugin.*\*.csproj" />
     </ItemGroup>
