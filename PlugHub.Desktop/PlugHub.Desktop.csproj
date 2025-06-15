@@ -31,6 +31,7 @@
 
 
 
+
   <!-- Custom Official Plugin Handling -->
   <ItemGroup>
     <Content Update="..\PlugHub.Plugins\**">
@@ -39,36 +40,73 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <PluginsRoot>..\PlugHub.Plugins\</PluginsRoot>
+    <IsPublishing Condition="'$(PublishDir)' != '' or '$(PublishProfile)' != '' or '$(DeployOnBuild)' == 'true'">true</IsPublishing>
+    <IsPublishing Condition="'$(PublishDir)' == '' and '$(PublishProfile)' == '' and '$(DeployOnBuild)' != 'true'">false</IsPublishing>
   </PropertyGroup>
 
-  <Target Name="BuildConfigurationPlugins" BeforeTargets="Build">
+  <Target Name="BuildReleasePlugins" BeforeTargets="PrepareForPublish" Condition="'$(IsPublishing)' == 'true'">
+    <Message Text="Building Release plugin projects..." Importance="high" />
+
+    <!-- Build shared plugin libraries -->
     <ItemGroup>
-      <PluginProjects Include="..\PlugHub.Plugins\*\*.csproj" />
+      <PluginSharedProjects Include="..\PlugHub.Plugins\PlugHub.Shared.*\*.csproj" />
     </ItemGroup>
-    <MSBuild
-      Projects="@(PluginProjects)"
-      Targets="Build"
-      Properties="Configuration=$(Configuration);
-                  RuntimeIdentifier=" />
+    <MSBuild Projects="@(PluginSharedProjects)"
+             Targets="Build"
+             Properties="Configuration=Release;Restore=true" />
+
+    <!-- Build plugin implementations -->
+    <ItemGroup>
+      <PluginImplProjects Include="..\PlugHub.Plugins\PlugHub.Plugin.*\*.csproj" />
+    </ItemGroup>
+    <MSBuild Projects="@(PluginImplProjects)"
+             Targets="Build"
+             Properties="Configuration=Release;Restore=true" />
   </Target>
 
-  <Target Name="BuildReleasePlugins" BeforeTargets="Publish">
+  <Target Name="CopyPluginArtifactsOnPublish" AfterTargets="Publish" DependsOnTargets="BuildReleasePlugins" Condition="'$(IsPublishing)' == 'true'">
+    <Message Text="Copying plugin artifacts to publish output..." Importance="high" />
     <ItemGroup>
-      <PluginProjects Include="..\PlugHub.Plugins\PlugHub.Plugin.*\*.csproj" />
+      <PluginArtifactsRaw Include="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\net8.0\**\*"
+                         Exclude="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\net8.0\PlugHub.Shared.dll;
+                                  ..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\net8.0\PlugHub.Shared.pdb" />
     </ItemGroup>
-    <MSBuild 
-      Projects="@(PluginProjects)"
-      Targets="Build"
-      Properties="Configuration=Release;
-                  RuntimeIdentifier=" />
+    <ItemGroup>
+      <PluginArtifacts Include="@(PluginArtifactsRaw)">
+        <PluginName>$([System.Text.RegularExpressions.Regex]::Match('%(PluginArtifactsRaw.Identity)', 'PlugHub\.Plugins\\([^\\]+)').Groups[1].Value)</PluginName>
+      </PluginArtifacts>
+    </ItemGroup>
+    <Copy SourceFiles="@(PluginArtifacts)"
+          DestinationFiles="@(PluginArtifacts->'$(PublishDir)Plugins\%(PluginName)\%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
   </Target>
 
-  <Target Name="CopyPluginArtifactsOnBuild" AfterTargets="Build" DependsOnTargets="BuildConfigurationPlugins">
+  <Target Name="BuildConfigurationPlugins" BeforeTargets="PrepareForBuild" Condition="'$(IsPublishing)' == 'false'">
+    <Message Text="Building $(Configuration) plugin projects..." Importance="high" />
+    <!-- Build shared plugin libraries -->
+    <ItemGroup>
+      <PluginSharedProjects Include="..\PlugHub.Plugins\PlugHub.Shared.*\*.csproj" />
+    </ItemGroup>
+    <MSBuild Projects="@(PluginSharedProjects)"
+             Targets="Build"
+             Properties="Configuration=$(Configuration);Restore=true" />
+
+    <!-- Build plugin implementations -->
+    <ItemGroup>
+      <PluginImplProjects Include="..\PlugHub.Plugins\PlugHub.Plugin.*\*.csproj" />
+    </ItemGroup>
+    <MSBuild Projects="@(PluginImplProjects)"
+             Targets="Build"
+             Properties="Configuration=$(Configuration);Restore=true" />
+  </Target>
+
+  <Target Name="CopyPluginArtifactsOnBuild" AfterTargets="Build" DependsOnTargets="BuildConfigurationPlugins" Condition="'$(IsPublishing)' == 'false'">
+    <Message Text="Copying plugin artifacts to build output..." Importance="high" />
     <ItemGroup>
       <PluginArtifactsRaw
         Include="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\$(Configuration)\**\*"
-        Exclude="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\$(Configuration)\**\PlugHub.Shared.dll;..\PlugHub.Plugins\PlugHub.Plugin.*\bin\$(Configuration)\**\PlugHub.Shared.pdb" />
+        Exclude="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\$(Configuration)\**\PlugHub.Shared.dll;
+                 ..\PlugHub.Plugins\PlugHub.Plugin.*\bin\$(Configuration)\**\PlugHub.Shared.pdb" />
     </ItemGroup>
     <ItemGroup>
       <PluginArtifacts
@@ -79,24 +117,6 @@
     <Copy
       SourceFiles="@(PluginArtifacts)"
       DestinationFiles="@(PluginArtifacts->'$(OutputPath)Plugins\%(PluginName)\%(Filename)%(Extension)')"
-      SkipUnchangedFiles="true" />
-  </Target>
-
-  <Target Name="CopyPluginArtifactsOnPublish" AfterTargets="Publish" DependsOnTargets="BuildReleasePlugins">
-    <ItemGroup>
-      <PluginArtifactsRaw
-        Include="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\**\*"
-        Exclude="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\**\PlugHub.Shared.dll;..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\**\PlugHub.Shared.pdb" />
-    </ItemGroup>
-    <ItemGroup>
-      <PluginArtifacts
-        Include="@(PluginArtifactsRaw)">
-        <PluginName>$([System.Text.RegularExpressions.Regex]::Match('%(PluginArtifactsRaw.Identity)', 'PlugHub\.Plugins\\([^\\]+)').Groups[1].Value)</PluginName>
-      </PluginArtifacts>
-    </ItemGroup>
-    <Copy
-      SourceFiles="@(PluginArtifacts)"
-      DestinationFiles="@(PluginArtifacts->'$(PublishDir)Plugins\%(PluginName)\%(Filename)%(Extension)')"
       SkipUnchangedFiles="true" />
   </Target>
 
