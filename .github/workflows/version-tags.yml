@@ -56,5 +56,6 @@ jobs:
         if: github.ref_type == 'tag'
         with:
           files: ./publish/PlugHub-Desktop-win-x64.zip
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
