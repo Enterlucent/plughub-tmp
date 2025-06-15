@@ -30,10 +30,10 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore Dependencies
-        run: dotnet restore
+        run: dotnet restore -r win-x64
 
       - name: Build Solution
-        run: dotnet build --configuration Release --no-restore -maxcpucount:1
+        run: dotnet build --configuration Release -r win-x64 -maxcpucount:1
 
       - name: Run Tests
         run: dotnet test --configuration Release --no-build --verbosity normal
