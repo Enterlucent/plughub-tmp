@@ -42,9 +42,20 @@
     <PluginsRoot>..\PlugHub.Plugins\</PluginsRoot>
   </PropertyGroup>
 
-  <Target Name="BuildReleasePlugins" BeforeTargets="Publish">
+  <Target Name="BuildConfigurationPlugins" BeforeTargets="Build">
     <ItemGroup>
       <PluginProjects Include="..\PlugHub.Plugins\*\*.csproj" />
+    </ItemGroup>
+    <MSBuild
+      Projects="@(PluginProjects)"
+      Targets="Build"
+      Properties="Configuration=$(Configuration);
+                  RuntimeIdentifier=" />
+  </Target>
+
+  <Target Name="BuildReleasePlugins" BeforeTargets="Publish">
+    <ItemGroup>
+      <PluginProjects Include="..\PlugHub.Plugins\PlugHub.Plugin.*\*.csproj" />
     </ItemGroup>
     <MSBuild 
       Projects="@(PluginProjects)"
@@ -53,22 +64,11 @@
                   RuntimeIdentifier=" />
   </Target>
 
-  <Target Name="BuildConfigurationPlugins" BeforeTargets="Build">
-    <ItemGroup>
-      <PluginProjects Include="..\PlugHub.Plugins\*\*.csproj" />
-    </ItemGroup>
-    <MSBuild 
-      Projects="@(PluginProjects)"
-      Targets="Build"
-      Properties="Configuration=$(Configuration);
-                  RuntimeIdentifier=" />
-  </Target>
-
   <Target Name="CopyPluginArtifactsOnBuild" AfterTargets="Build" DependsOnTargets="BuildConfigurationPlugins">
     <ItemGroup>
       <PluginArtifactsRaw
-        Include="..\PlugHub.Plugins\*\bin\$(Configuration)\**\*"
-        Exclude="..\PlugHub.Plugins\*\bin\$(Configuration)\**\PlugHub.Shared.dll;..\PlugHub.Plugins\*\bin\$(Configuration)\**\PlugHub.Shared.pdb" />
+        Include="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\$(Configuration)\**\*"
+        Exclude="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\$(Configuration)\**\PlugHub.Shared.dll;..\PlugHub.Plugins\PlugHub.Plugin.*\bin\$(Configuration)\**\PlugHub.Shared.pdb" />
     </ItemGroup>
     <ItemGroup>
       <PluginArtifacts
@@ -85,8 +85,8 @@
   <Target Name="CopyPluginArtifactsOnPublish" AfterTargets="Publish" DependsOnTargets="BuildReleasePlugins">
     <ItemGroup>
       <PluginArtifactsRaw
-        Include="..\PlugHub.Plugins\*\bin\Release\**\PlugHub.Plugin.*.*"
-        Exclude="..\PlugHub.Plugins\*\bin\Release\**\PlugHub.Shared.dll;..\PlugHub.Plugins\*\bin\Release\**\PlugHub.Shared.pdb" />
+        Include="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\**\*"
+        Exclude="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\**\PlugHub.Shared.dll;..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\**\PlugHub.Shared.pdb" />
     </ItemGroup>
     <ItemGroup>
       <PluginArtifacts

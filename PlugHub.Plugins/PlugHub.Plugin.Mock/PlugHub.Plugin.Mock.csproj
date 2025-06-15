@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\PlugHub.Shared\PlugHub.Shared.csproj" />
+    <ProjectReference Include="..\PlugHub.Shared.Mock\PlugHub.Shared.Mock.csproj" />
   </ItemGroup>
 
 </Project>
