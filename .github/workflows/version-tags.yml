@@ -14,9 +14,6 @@ jobs:
         with:
           lfs: true
 
-      - name: Ensure LFS files are present
-        run: git lfs pull
-
       - name: Cache NuGet packages
         uses: actions/cache@v3
         with:
@@ -30,9 +27,6 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Show .NET SDK info
-        run: dotnet --info
-
       - name: Restore dependencies
         run: dotnet restore -r win-x64
 
@@ -44,9 +38,6 @@ jobs:
 
       - name: Publish self-contained app (Windows x64)
         run: dotnet publish PlugHub.Desktop/PlugHub.Desktop.csproj -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:PublishTrimmed=false -o ./publish/win-x64 -maxcpucount:1
-
-      - name: List published files for debugging
-        run: Get-ChildItem -Recurse ./publish/win-x64/
 
       - name: Compress published files
         run: Compress-Archive -Path ./publish/win-x64/* -DestinationPath ./publish/PlugHub-Desktop-win-x64.zip
