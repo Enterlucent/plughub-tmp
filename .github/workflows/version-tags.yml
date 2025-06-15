@@ -34,7 +34,7 @@ jobs:
         run: dotnet --info
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore -r win-x64
 
       - name: Build (Release)
         run: dotnet build --configuration Release -maxcpucount:1
