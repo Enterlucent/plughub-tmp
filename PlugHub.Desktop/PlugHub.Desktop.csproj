@@ -68,8 +68,8 @@
     <Message Text="Copying plugin artifacts to publish output..." Importance="high" />
     <ItemGroup>
       <PluginArtifactsRaw Include="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\net8.0\**\*"
-                         Exclude="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\net8.0\PlugHub.Shared.dll;
-                                  ..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\net8.0\PlugHub.Shared.pdb" />
+                         Exclude="..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\net8.0\**\PlugHub.Shared.dll;
+                                  ..\PlugHub.Plugins\PlugHub.Plugin.*\bin\Release\net8.0\**\PlugHub.Shared.pdb" />
     </ItemGroup>
     <ItemGroup>
       <PluginArtifacts Include="@(PluginArtifactsRaw)">
