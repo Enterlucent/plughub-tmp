@@ -59,12 +59,12 @@ jobs:
             -c Release \
             -r ${{ matrix.rid }} \
             --self-contained true \
-            /p:PublishSingleFile=true \
-            /p:IncludeNativeLibrariesForSelfExtract=true \
-            /p:PublishTrimmed=false \
+            -p:PublishSingleFile=true \
+            -p:IncludeNativeLibrariesForSelfExtract=true \
+            -p:PublishTrimmed=false \
             -o ./publish/${{ matrix.rid }} \
             -maxcpucount:1
-        shell: bash 
+        shell: bash
 
       - name: Compress published files (cross-platform)
         uses: thedoctor0/zip-release@0.7.5
