@@ -137,7 +137,7 @@ Unlike traditional projects where documentation is often an afterthought, PlugHu
    _Only begin work on issues that meet these criteria._
 2. **Review Existing Documentation:**  
    There may be bugs or outdated sections in the current docs:
-   - [Project Documentation](../../docs/)
+   - [Project Documentation](../../tree/main/docs/)
    - [GitHub Pages](https://enterlucent.github.io/plughub/)
 3. **Submit Your Own Request:**  
    If you spot missing or unclear documentation, submit a [Documentation Request](#how-to-open-a-documentation-request).
