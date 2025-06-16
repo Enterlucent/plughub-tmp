@@ -68,10 +68,10 @@ Outside of these points, feel free to share PlugHub’s virtues and invite other
 These are the true warriors, fighting in the trenches to bring a better experience for the rest, it can not be stressed enough how important good Quality Controllers are to a project.  Many software houses tend to under value the work that Quality Controllers provide and often leave it to the community to debug (oh ...) their code, assets and documentation.  Here we understand the absolute need for the services they provide and are grateful for every detailed bug report provided.
 
 ### How to Open a Bug Report
-1. Determine if the bug has already been [reported](/issues?q=label%3Abug+is%3Aopen)
+1. Determine if the bug has already been [reported](../../issues?q=label%3Abug+is%3Aopen)
     * If you find that the Issue has already been opened then a new Issue is not needed.
     * Feel free to add your experiences to bug reports and to reopen bug Issues if it crops up again.
-2. Create a "Bug Report" on the [Issues Tracker](/issues/new?template=report-bug.md).
+2. Create a "Bug Report" on the [Issues Tracker](../../issues/new?template=report-bug.md).
     * Make sure that you are very detailed with what you are experiencing
     * If this is a documentation bug then add documentation to the labels
 3. Check back often, or enable the notification options, in case others have questions or need further clarification
@@ -93,10 +93,10 @@ If you have an idea for the next great PlugHub feature, let us know by following
 
 ### How to Open a Feature Request
 1. **Check for Existing Requests:**  
-   Search [open feature requests](/issues?q=label%3Aenhancement+is%3Aopen) to see if your idea has already been suggested.
+   Search [open feature requests](../../issues?q=label%3Aenhancement+is%3Aopen) to see if your idea has already been suggested.
     - If a similar request exists, expand on it by commenting rather than opening a duplicate.
 2. **Create a New Feature Request:**  
-   Open a [Feature Request](/issues/new?template=request-feature.md) on the Issues Tracker.
+   Open a [Feature Request](../../issues/new?template=request-feature.md) on the Issues Tracker.
     - Be as detailed as possible: describe what the feature should accomplish, how it might be implemented, and its impact on other features.
 3. **Engage in Discussion:**  
    Check back often, or enable notifications, in case others have questions or feedback about your proposal.
@@ -108,11 +108,11 @@ If you have an idea for the next great PlugHub feature, let us know by following
 
 ### How to Open a Documentation Request
 1. **Check for Existing Documentation Requests:**  
-   Review [open documentation requests](/issues?q=label%3Adocumentation+is%3Aopen) to see if your suggestion has already been made.
+   Review [open documentation requests](../../issues?q=label%3Adocumentation+is%3Aopen) to see if your suggestion has already been made.
     - Ask questions or discuss implementation details in the issue thread, or join our [Discord](https://discord.com/invite/mWDHDqkzeR) for real-time discussion.
     - If you find a similar request that’s missing something critical, comment on it to expand the discussion.
 2. **Create a New Documentation Request:**  
-   Open a [Documentation Request](/issues/new?template=request-documentation.md) explaining your proposed documentation changes or additions.
+   Open a [Documentation Request](../../issues/new?template=request-documentation.md) explaining your proposed documentation changes or additions.
     - Be as detailed as possible: describe what the documentation should cover and what key areas need to be addressed.
 3. **Participate in the Review:**  
    Others may ask questions or request changes, so check back or enable notifications.
@@ -138,11 +138,11 @@ Unlike traditional projects where documentation is often an afterthought, PlugHu
 
 ### How to Find Documentation Tasks
 1. **Check the Issue Tracker:**  
-   Look for [Documentation Requests](/issues?q=label%3Adocumentation,approved+is%3Aopen+no%3Aassignee) that are open, “approved,” and unassigned.  
+   Look for [Documentation Requests](../../issues?q=label%3Adocumentation,approved+is%3Aopen+no%3Aassignee) that are open, “approved,” and unassigned.  
    _Only begin work on issues that meet these criteria._
 2. **Review Existing Documentation:**  
    There may be bugs or outdated sections in the current docs:
-   - [Project Documentation](/docs/)
+   - [Project Documentation](../docs/)
    - [GitHub Pages](https://enterlucent.github.io/plughub/)
 3. **Submit Your Own Request:**  
    If you spot missing or unclear documentation, submit a [Documentation Request](#how-to-open-a-documentation-request).
@@ -165,7 +165,7 @@ Unlike traditional projects where documentation is often an afterthought, PlugHu
 Programmers are responsible for implementing features proposed by Product Designers, maintaining code quality, and integrating assets and documentation contributed by the community.
 
 ### How to Find Programming Tasks
-1. **Browse the [Issue Tracker](/issues?q=label%3Aenhancement,bug,approved+is%3Aopen+no%3Aassignee):**
+1. **Browse the [Issue Tracker](../../issues?q=label%3Aenhancement,bug,approved+is%3Aopen+no%3Aassignee):**
     - Look for open, “approved,” and unassigned issues labeled as `enhancement` or `bug`.
     - Ask questions in the Issue thread or join the [Discord](https://discord.com/invite/mWDHDqkzeR) server for real-time discussion.
     - **Only begin work on issues that are open, approved, and unassigned.**
