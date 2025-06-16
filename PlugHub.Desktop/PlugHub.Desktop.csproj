@@ -34,7 +34,7 @@
 
   <!-- Custom Official Plugin Handling -->
   <ItemGroup>
-    <Content Update="..\PlugHub.Plugins\**">
+    <Content Update="..\PlugHub.Plugins\PlugHub.Plugin.*">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
   </ItemGroup>
