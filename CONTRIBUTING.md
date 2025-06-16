@@ -1,8 +1,15 @@
 # CONTRIBUTING
 
+Thank you for your interest in PlugHub. With the support of contributors like you, we aim to make PlugHub the leading open, enterprise-grade plugin orchestrator for modular software development.
+
+This document is designed to help you get oriented—whether you’re looking for ways to contribute, need guidance on how to get started, or want to share your work with the community. We know it can be challenging to figure out where to begin, or frustrating if you’re eager to help but unsure of the process. Our goal is to make contributing to PlugHub as clear and accessible as possible, whether you’re new to open source or an experienced developer.
+
+You'll find information here on how to discover tasks, contribute effectively, and collaborate with others. If you already know what you want to work on, you’ll also find step-by-step instructions to help you get your contributions reviewed and merged into the project.
+
+We’re glad to have you here—let’s build something great together!
+
 ## Table of Contents
 
-- [Introduction](#introduction)
 - [Getting Started](#getting-started)
 - [Evangelist](#evangelist)
 - [Quality Controller](#quality-controller)
@@ -19,16 +26,6 @@
   - [How to Find Programming Tasks](#how-to-find-programming-tasks)
   - [How to Submit Code](#how-to-submit-code)
 - [Attribution](#attribution)
-
-
-## Introduction
-Thank you for your interest in PlugHub. With the support of contributors like you, we aim to make PlugHub the leading open, enterprise-grade plugin orchestrator for modular software development.
-
-This document is designed to help you get oriented—whether you’re looking for ways to contribute, need guidance on how to get started, or want to share your work with the community. We know it can be challenging to figure out where to begin, or frustrating if you’re eager to help but unsure of the process. Our goal is to make contributing to PlugHub as clear and accessible as possible, whether you’re new to open source or an experienced developer.
-
-You'll find information here on how to discover tasks, contribute effectively, and collaborate with others. If you already know what you want to work on, you’ll also find step-by-step instructions to help you get your contributions reviewed and merged into the project.
-
-We’re glad to have you here—let’s build something great together!
 
 
 ## Getting Started
