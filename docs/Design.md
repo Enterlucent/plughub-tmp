@@ -3,9 +3,10 @@
 This is the design document for PlugHub, an open, extensible plugin orchestrator and management platform. Our intention with this document is to lay out the overall vision for PlugHub and outline how we plan to achieve it.
 
 # Table of Contents
-* [Project Overview](#project-overview)
-    * [Philosophy](#philosophy)
-    * [Common Questions](#common-questions)
+
+- [Project Overview](#project-overview)
+    - [Philosophy](#philosophy)
+    - [Common Questions](#common-questions)
 
 # Project Overview
 
@@ -19,11 +20,11 @@ The motivations and thought processes that drive the spirit of PlugHub.
 
 Many software projects become overwhelmed by the sheer number of features they hope to deliver, often attempting to implement everything at once. This can lead to confusion, instability, and delays. At PlugHub, we believe in focusing on clear, discrete goals and delivering incremental, usable releases that provide immediate value to our users and contributors.
 
-PlugHub’s roadmap is organized into Milestones, each targeting key features and technologies. Milestones are further broken down into Featgures and Tasks, allowing contributors to focus on manageable tasks. While this document outlines the overall vision, each major milestone or feature set will have its own design and planning documentation.
+PlugHub’s roadmap is organized into Milestones, each targeting key features and technologies. Milestones are further broken down into Features and Tasks, allowing contributors to focus on manageable work. While this document outlines the overall vision, each major milestone or feature set will have its own design and planning documentation.
 
 ### Open Source for the Right Reasons
 
-A concerning trend in the software industry is the prioritization of profit over community and quality. Some projects prioritize monetization at the expense of stability, openness, or user empowerment. PlugHub is different: we are committed to building a platform that serves its community first. Our decisions are guided by what’s best for users and contributors, not shareholders.
+At PlugHub, our priority is to build a platform that serves its community, emphasizing stability, openness, and user empowerment.
 
 PlugHub is open source because we believe in transparency, collaboration, and the power of a shared vision. If the project is successful and generates revenue, that’s a bonus—but our primary motivation is to create something valuable, reliable, and community-driven.
 
@@ -33,11 +34,11 @@ Below are some questions we anticipate from new users and contributors. If you h
 
 ### What is PlugHub?
 
-you create entire applications by assembling plugins. Rather than being a traditional app with fixed features, PlugHub acts as a foundation where all functionality—UI, logic, tools, and workflows—is provided by plugins. You can use PlugHub to build a specialized program by selecting only the plugins you need, or combine many plugins to create an “everything app” tailored to your workflow. This approach enables rapid development, easy customization, and fast deployment of new applications—without starting from scratch each time. With PlugHub, the plugins do all the heavy lifting, and the container simply orchestrates their interaction and presentation.
+PlugHub acts as a foundation where all functionality—UI, logic, tools, and workflows—is provided by plugins, rather than being a traditional app with fixed features. You can use PlugHub to build a specialized program by selecting only the plugins you need, or combine many plugins to create an “everything app” tailored to your workflow. This approach enables rapid development, easy customization, and fast deployment of new applications—without starting from scratch each time. With PlugHub, the plugins do all the heavy lifting, and the container simply orchestrates their interaction and presentation.
 
 ### Why create PlugHub?
 
-PlugHub was created to address the need for a modern, flexible foundation for building applications entirely from plugins. Unlike traditional solutions that treat plugins as optional add-ons to a fixed core, PlugHub is designed so that every feature, tool, or workflow is delivered as a plugin. This approach breaks free from the limitations of monolithic or proprietary platforms, enabling developers and organizations to rapidly assemble, customize, and evolve their own applications—without reinventing the wheel. PlugHub empowers you to create, combine, and share plugin-driven apps, fostering true extensibility, maintainability, and a vibrant, collaborative community.
+PlugHub was created to address the need for a modern, flexible foundation for building applications entirely from plugins. Every feature, tool, or workflow is delivered as a plugin, making extensibility and customization fundamental to the platform. This approach breaks free from the limitations of monolithic or proprietary platforms, enabling developers and organizations to rapidly assemble, customize, and evolve their own applications—without reinventing the wheel. PlugHub empowers you to create, combine, and share plugin-driven apps, fostering true extensibility, maintainability, and a vibrant, collaborative community.
 
 ### Where does PlugHub run?
 
@@ -49,4 +50,4 @@ PlugHub is for developers, organizations, and hobbyists who want to build entire
 
 ### What sets PlugHub apart?
 
-PlugHub stands apart by making plugins the foundation of the entire application—not just optional add-ons. Its architecture is built on open standards and designed for true cross-platform reach, empowering anyone to assemble, customize, and evolve their own software solutions. Unlike traditional platforms, PlugHub isn’t tied to a single vendor or commercial agenda—its roadmap and features are shaped by the creativity and needs of its community. With a strong emphasis on stability, extensibility, and an open, collaborative environment, PlugHub invites contributors of all backgrounds to help build the next generation of modular applications.
+PlugHub stands apart by making plugins the foundation of the entire application—not just optional add-ons. Its architecture is built on open standards and designed for true cross-platform reach, empowering anyone to assemble, customize, and evolve their own software solutions. PlugHub’s roadmap and features are shaped by the creativity and needs of its community. With a strong emphasis on stability, extensibility, and an open, collaborative environment, PlugHub invites contributors of all backgrounds to help build the next generation of modular applications.
