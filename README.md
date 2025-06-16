@@ -100,18 +100,22 @@ See the list of [contributors](../../graphs/contributors) who have participated 
 This repository uses **dual licensing**:
 
 ### **Host Application & Shared Libraries**
-- **LGPL-3.0** ([View License](LICENSE))  
-  Applies to all code **except** official plugins.  
-  - Permits use in proprietary software.  
-  - Modifications to LGPL code must be shared under LGPL.  
+- **LGPL-3.0** ([View License](LICENSE))
+  - Applies to all code **except** official plugins.
+  - Permits use in proprietary software.
+  - Modifications to LGPL code must be shared under LGPL.
 
 ### **Official Plugins**
-- **GPL-3.0** (see plugin-specific `LICENSE` files)  
-  Applies to all code in `PlugHub.Plugins\PlugHub.Plugin.*` directories.  
-  - Plugins may be used freely.  
-  - **Derivative works** (forks, wrappers, modifications) must also be GPL-licensed.  
+- **GPL-3.0** (see plugin-specific `LICENSE` files)
+  - Applies to all code in `PlugHub.Plugins\PlugHub.Plugin.*` directories.
+  - Plugins may be used freely.
+  - **Derivative works** (forks, wrappers, modifications) must also be GPL-licensed.
+
+> If a subfolder contains its own `LICENSE` file, that license applies to the code in that subfolder and takes precedence over the root license.  
+> Always check the `LICENSE` file in each plugin directory for the specific terms that apply to that plugin.
 
 | Component          | License | Key Requirement                          |
 |--------------------|---------|------------------------------------------|
 | Host/Shared Code   | LGPL    | Modifications must be shared as LGPL.    |
 | Official Plugins   | GPL     | Derivatives must be GPL.                 |
+
