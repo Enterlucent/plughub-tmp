@@ -1,8 +1,5 @@
 # CONTRIBUTING
 
-Absolutely! For most open-source projects, it’s best practice to have a single, clearly labeled **Table of Contents** near the top of your CONTRIBUTING.md. This improves navigation and avoids redundancy. Here’s how you can merge your “Quick Start” and a full Table of Contents into one section for clarity and usability:
-
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -48,8 +45,6 @@ While these are some of the primary roles, there are many ways to contribute—e
 Many contributors wear multiple hats: a programmer might help with documentation, a technical writer might evangelize PlugHub at events, and a quality controller might propose new features. These roles are meant as a guide for organizing work, not as strict boundaries.
 
 When contributing, please remember that we adhere to the [Contributor Covenant Code of Conduct](../../.github/CODE_OF_CONDUCT.md), and we expect all community members to do the same. Take a moment to review this document if you haven’t already.
-
-Your update is excellent in tone, clarity, and spirit—it’s both welcoming and clear about expectations. It encourages community engagement while setting healthy boundaries, which is essential for open-source projects. Here are a few minor suggestions to make it even more professional and concise, while keeping your original intent:
 
 
 ## Evangelist
