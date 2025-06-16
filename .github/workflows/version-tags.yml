@@ -1,5 +1,8 @@
 name: Build, Publish, and Create Release for Avalonia App
 
+permissions:
+  contents: write 
+
 on:
   push:
     tags:
@@ -39,8 +42,12 @@ jobs:
       - name: Publish self-contained app (Windows x64)
         run: dotnet publish PlugHub.Desktop/PlugHub.Desktop.csproj -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:PublishTrimmed=false -o ./publish/win-x64 -maxcpucount:1
 
-      - name: Compress published files
-        run: Compress-Archive -Path ./publish/win-x64/* -DestinationPath ./publish/PlugHub-Desktop-win-x64.zip
+      - name: Compress published files (cross-platform)
+        uses: thedoctor0/zip-release@0.7.5
+        with:
+          type: 'zip'  # Compression type; 'zip' is the default
+          filename: 'PlugHub-Desktop-win-x64.zip'  # Name of the output zip file
+          path: './publish/win-x64/*'  # Files or folders to compress
 
       - name: Release
         uses: softprops/action-gh-release@v2
