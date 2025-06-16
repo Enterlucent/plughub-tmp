@@ -96,6 +96,22 @@ Refer to our [Design Document](docs/Design.md) and [Code of Conduct](.github/COD
 See the list of [contributors](../../graphs/contributors) who have participated in this project.
 
 ## License
-This project is licensed under the GNU Lesser General Public License (LGPL). See the [LICENSE](LICENSE) file for details.
 
-> For more details, please refer to the documentation and join the community discussions.
+This repository uses **dual licensing**:
+
+### **Host Application & Shared Libraries**
+- **LGPL-3.0** ([View License](LICENSE))  
+  Applies to all code **except** official plugins.  
+  - Permits use in proprietary software.  
+  - Modifications to LGPL code must be shared under LGPL.  
+
+### **Official Plugins**
+- **GPL-3.0** (see plugin-specific `LICENSE` files)  
+  Applies to all code in `PlugHub.Plugins\PlugHub.Plugin.*` directories.  
+  - Plugins may be used freely.  
+  - **Derivative works** (forks, wrappers, modifications) must also be GPL-licensed.  
+
+| Component          | License | Key Requirement                          |
+|--------------------|---------|------------------------------------------|
+| Host/Shared Code   | LGPL    | Modifications must be shared as LGPL.    |
+| Official Plugins   | GPL     | Derivatives must be GPL.                 |
