@@ -44,11 +44,11 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore dependencies
-        run: dotnet restore PlugHub.Desktop/PlugHub.Desktop.csproj -r ${{ matrix.rid }}
+      - name: Restore all projects
+        run: dotnet restore PlugHub.sln
 
       - name: Build (Release)
-        run: dotnet build PlugHub.Desktop/PlugHub.Desktop.csproj --configuration Release -maxcpucount:1
+        run: dotnet build --configuration Release -maxcpucount:1
 
       - name: Test
         run: dotnet test --configuration Release --no-build --verbosity normal
