@@ -29,9 +29,9 @@ jobs:
             is_browser: false
             solution_file: PlugHub.sln
           - os: ubuntu-latest
-            artifact_name: PlugHub-Web.zip
+            artifact_name: PlugHub-Browser.zip
             is_browser: true
-            solution_file: PlugHub.Web.sln
+            solution_file: PlugHub.Browser.sln
 
     runs-on: ${{ matrix.os }}
 
