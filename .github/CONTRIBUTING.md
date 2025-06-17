@@ -63,7 +63,7 @@ These are the true warriors, fighting in the trenches to bring a better experien
 1. Determine if the bug has already been [reported](../../issues?q=label%3Abug+is%3Aopen)
     * If you find that the Issue has already been opened then a new Issue is not needed.
     * Feel free to add your experiences to bug reports and to reopen bug Issues if it crops up again.
-2. Create a "Bug Report" on the [Issues Tracker](../../issues/new?template=report-bug.md).
+2. Create a "Bug Report" on the [Issues Tracker](../../issues/new?template=report-bug.yml).
     * Make sure that you are very detailed with what you are experiencing
     * If this is a documentation bug then add documentation to the labels
 3. Check back often, or enable the notification options, in case others have questions or need further clarification

@@ -56,8 +56,7 @@ With PlugHub, you can rapidly extend functionality, validate plugin compatibilit
    Review [open bug reports](../../issues?q=label%3Abug+is%3Aopen).
    - Add details or reopen if your issue matches an existing report.
 2. **File a Bug Report:**  
-   Use the [Bug Report template](../../issues/new?template=report-bug.md).
-   - Prefix your title with `[BUG]` (e.g., `[BUG] Plugin fails to load on startup`).
+   Use the [Bug Report template](../../issues/new?template=report-bug.yml).
    - Include detailed steps to reproduce, expected and actual behavior, and environment details.
 3. **Monitor and Respond:**  
    Watch for follow-up questions or requests for additional information.
