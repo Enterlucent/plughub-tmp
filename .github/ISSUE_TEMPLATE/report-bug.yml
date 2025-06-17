@@ -1,4 +1,4 @@
-name: Bug report
+name: Bug Report [New]
 description: Create a report to help us improve PlugHub
 title: "<short summary of your identified issue>"
 type: bug
@@ -8,9 +8,8 @@ body:
     id: full_report
     attributes:
       label: Bug Report Details
-      description: |
-        Please fill out all sections below. Delete any section that does not apply.
-      placeholder: |
+      description: Please fill out all sections below. Delete any section that does not apply.
+      value: |
         <!--- Please ensure you are reporting this bug in the correct repository. -->
 
         ## Description
