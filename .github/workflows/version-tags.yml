@@ -1,4 +1,4 @@
-name: PlugHub Desktop Publish Release
+name: PlugHub Desktop Release
 
 permissions:
   contents: write
