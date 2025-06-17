@@ -16,10 +16,20 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        solution:
-          - PlugHub.sln
-          - PlugHub.Web.sln
+        include:
+          - os: windows-latest
+            is_browser: false
+            solution_file: PlugHub.sln
+          - os: ubuntu-latest
+            is_browser: false
+            solution_file: PlugHub.sln
+          - os: macos-latest
+            is_browser: false
+            solution_file: PlugHub.sln
+          - os: ubuntu-latest
+            is_browser: true
+            solution_file: PlugHub.Web.sln
+
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -36,15 +46,15 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Install wasm-tools workload (for web)
-        if: endsWith(matrix.solution, '.Web.sln')
+      - name: Restore Dependencies
+        run: dotnet restore ${{ matrix.solution_file }}
+
+      - name: Install wasm-tools workload (for browser)
+        if: matrix.is_browser == true
         run: dotnet workload install wasm-tools
 
-      - name: Restore Dependencies
-        run: dotnet restore ${{ matrix.solution }}
-
       - name: Build Solution
-        run: dotnet build ${{ matrix.solution }} --configuration Release --no-restore -maxcpucount:1
+        run: dotnet build ${{ matrix.solution_file }} --configuration Release --no-restore -maxcpucount:1
 
       - name: Run Tests
-        run: dotnet test ${{ matrix.solution }} --configuration Release --no-build --verbosity normal
+        run: dotnet test ${{ matrix.solution_file }} --configuration Release --no-build --verbosity normal

@@ -22,12 +22,12 @@ jobs:
             rid: linux-x64
             artifact_name: PlugHub-Desktop-linux-x64.zip
             is_browser: false
-            solution_file: PlugHub.Desktop.sln
+            solution_file: PlugHub.sln
           - os: macos-latest
             rid: osx-x64
             artifact_name: PlugHub-Desktop-osx-x64.zip
             is_browser: false
-            solution_file: PlugHub.Desktop.sln
+            solution_file: PlugHub.sln
           - os: ubuntu-latest
             artifact_name: PlugHub-Web.zip
             is_browser: true
