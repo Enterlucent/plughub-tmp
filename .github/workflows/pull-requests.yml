@@ -16,43 +16,28 @@ jobs:
   test:
     strategy:
       matrix:
-        include:
-          - os: windows-latest
-            is_browser: false
-            solution_file: PlugHub.sln
-          - os: ubuntu-latest
-            is_browser: false
-            solution_file: PlugHub.sln
-          - os: macos-latest
-            is_browser: false
-            solution_file: PlugHub.sln
-          - os: ubuntu-latest
-            is_browser: true
-            solution_file: PlugHub.Browser.sln
-
+        os: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
-
+    
     steps:
       - name: Checkout repository (with LFS)
         uses: actions/checkout@v4
         with:
           lfs: true
 
+      - name: Ensure LFS files are present
+        run: git lfs pull          
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
-      - name: Install wasm-tools workload (for browser)
-        if: matrix.is_browser == true
-        run: dotnet workload install wasm-tools
-
       - name: Restore Dependencies
-        run: dotnet restore ${{ matrix.solution_file }}
+        run: dotnet restore
 
       - name: Build Solution
-        run: dotnet build ${{ matrix.solution_file }} --configuration Release --no-restore -maxcpucount:1
+        run: dotnet build --configuration Release --no-restore -maxcpucount:1
 
       - name: Run Tests
-        run: dotnet test ${{ matrix.solution_file }} --configuration Release --no-build --verbosity normal
-
+        run: dotnet test --configuration Release --no-build --verbosity normal

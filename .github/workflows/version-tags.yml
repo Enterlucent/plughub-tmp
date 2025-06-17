@@ -16,22 +16,12 @@ jobs:
           - os: windows-latest
             rid: win-x64
             artifact_name: PlugHub-Desktop-win-x64.zip
-            is_browser: false
-            solution_file: PlugHub.sln
           - os: ubuntu-latest
             rid: linux-x64
             artifact_name: PlugHub-Desktop-linux-x64.zip
-            is_browser: false
-            solution_file: PlugHub.sln
           - os: macos-latest
             rid: osx-x64
             artifact_name: PlugHub-Desktop-osx-x64.zip
-            is_browser: false
-            solution_file: PlugHub.sln
-          - os: ubuntu-latest
-            artifact_name: PlugHub-Browser.zip
-            is_browser: true
-            solution_file: PlugHub.Browser.sln
 
     runs-on: ${{ matrix.os }}
 
@@ -54,23 +44,16 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Install wasm-tools workload (for browser)
-        if: matrix.is_browser == true
-        run: dotnet workload install wasm-tools
-
       - name: Restore all projects
-        run: dotnet restore ${{ matrix.solution_file }}
+        run: dotnet restore PlugHub.sln
 
       - name: Build (Release)
-        if: matrix.is_browser == false
-        run: dotnet build ${{ matrix.solution_file }} --configuration Release -maxcpucount:1
+        run: dotnet build --configuration Release -maxcpucount:1
 
       - name: Test
-        if: matrix.is_browser == false
-        run: dotnet test ${{ matrix.solution_file }} --configuration Release --no-build --verbosity normal
+        run: dotnet test --configuration Release --no-build --verbosity normal
 
       - name: Publish self-contained app (${{ matrix.rid }})
-        if: matrix.is_browser == false
         run: |
           dotnet publish PlugHub.Desktop/PlugHub.Desktop.csproj \
             -c Release \
@@ -83,28 +66,12 @@ jobs:
             -maxcpucount:1
         shell: bash
 
-      - name: Publish for WebAssembly
-        if: matrix.is_browser == true
-        run: |
-          dotnet publish PlugHub.Browser/PlugHub.Browser.csproj \
-            -c Release \
-            -o ./publish/web
-
-      - name: Compress published files (desktop)
-        if: matrix.is_browser == false
+      - name: Compress published files (cross-platform)
         uses: thedoctor0/zip-release@0.7.5
         with:
           type: 'zip'
           filename: ${{ matrix.artifact_name }}
-          path: ./publish/${{ matrix.rid }}
-
-      - name: Compress published files (web)
-        if: matrix.is_browser == true
-        uses: thedoctor0/zip-release@0.7.5
-        with:
-          type: 'zip'
-          filename: ${{ matrix.artifact_name }}
-          path: ./publish/web/wwwroot
+          path: ./publish/${{ matrix.rid }} 
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
