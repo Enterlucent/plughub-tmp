@@ -1,84 +1,48 @@
-name: Bug report [New]
+name: Bug report
 description: Create a report to help us improve PlugHub
 title: "<short summary of your identified issue>"
 type: bug
 
 body:
-  - type: markdown
+  - type: textarea
+    id: full_report
     attributes:
-      value: |
+      label: Bug Report Details
+      description: |
+        Please fill out all sections below. Delete any section that does not apply.
+      placeholder: |
         <!--- Please ensure you are reporting this bug in the correct repository. -->
 
-  - type: textarea
-    id: description
-    attributes:
-      label: Description
-      description: Provide a detailed introduction to the issue and why you consider it a bug.
-    validations:
-      required: true
+        ## Description
+        <!--- Provide a detailed introduction to the issue and why you consider it a bug. -->
 
-  - type: textarea
-    id: expected_behavior
-    attributes:
-      label: Expected Behavior
-      render: bash  # or any supported language
-    validations:
-      required: true
+        ## Expected Behavior
+        <!--- Tell us what you expected to happen. -->
 
-  - type: textarea
-    id: actual_behavior
-    attributes:
-      label: Actual Behavior
-      description: Tell us what actually happens instead.
-    validations:
-      required: true
+        ## Actual Behavior
+        <!--- Tell us what actually happens instead. -->
 
-  - type: textarea
-    id: steps_to_reproduce
-    attributes:
-      label: Steps to Reproduce
-      description: Provide a minimal reproducible example or clear steps to reproduce the bug.
-      value: |
+        ## Steps to Reproduce
+        <!--- Provide a minimal reproducible example or clear steps to reproduce the bug. -->
         1.
         2.
         3.
         4.
-    validations:
-      required: false
 
-  - type: textarea
-    id: logs
-    attributes:
-      label: Logs or Screenshots (if relevant)
-      description: Paste logs, error messages, or add screenshots to help explain your problem.
-    validations:
-      required: false
+        ## Logs or Screenshots (if relevant)
+        <!--- Paste logs, error messages, or add screenshots to help explain your problem. -->
 
-  - type: textarea
-    id: context
-    attributes:
-      label: Context
-      description: How has this bug affected you? What were you trying to accomplish?
-    validations:
-      required: false
+        ## Context
+        <!--- How has this bug affected you? What were you trying to accomplish? -->
 
-  - type: textarea
-    id: possible_fix
-    attributes:
-      label: Possible Fix
-      description: Not required, but if you have an idea for a fix, let us know.
-    validations:
-      required: false
+        ## Possible Fix
+        <!--- Not required, but if you have an idea for a fix, let us know. -->
 
-  - type: textarea
-    id: environment
-    attributes:
-      label: Your Environment
-      description: |
-        Include as many relevant details as possible.
+        ## Your Environment
+        <!--- Include as many relevant details as possible. -->
         * PlugHub version:
         * Plugin version (if applicable):
         * Operating System and version (desktop or mobile):
         * .NET Runtime version (if applicable):
     validations:
-      required: false
+      required: true
