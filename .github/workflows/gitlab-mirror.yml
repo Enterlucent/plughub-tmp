@@ -18,5 +18,6 @@ jobs:
         fetch-depth: 0
         ref: main
         lfs: true
+    - run: git lfs fetch --all
     - run: git remote add gitlab https://github:${{ secrets.GITLAB_PASSWORD }}@git.enterlucent.com:1337/enterlucent/enterlucent-applications/plughub.git
     - run: git push --mirror gitlab
