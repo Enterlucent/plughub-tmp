@@ -7,17 +7,18 @@ on:
       - main
 
 permissions:
-    contents: read    
+  contents: read    
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-        ref: main
-        lfs: true
-    - run: git lfs fetch --all
-    - run: git remote add gitlab https://github:${{ secrets.GITLAB_PASSWORD }}@git.enterlucent.com:1337/enterlucent/enterlucent-applications/plughub.git
-    - run: git push --mirror gitlab
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: main
+          lfs: true
+      - run: git lfs fetch --all
+      - run: git remote add gitlab https://github:${{ secrets.GITLAB_PASSWORD }}@git.enterlucent.com:1337/enterlucent/enterlucent-applications/plughub.git
+      - run: git push --all gitlab
+      - run: git push --tags gitlab
