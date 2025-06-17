@@ -4,10 +4,11 @@
     <OutputType>Exe</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Nullable>enable</Nullable>
+    <WasmBuildNative>true</WasmBuildNative>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia.Browser" />
+    <PackageReference Include="Avalonia.Browser" Version="11.3.1" />
   </ItemGroup>
 
   <ItemGroup>

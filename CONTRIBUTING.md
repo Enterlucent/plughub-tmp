@@ -2,11 +2,11 @@
 
 Thank you for your interest in PlugHub. With the support of contributors like you, we aim to make PlugHub the leading open, enterprise-grade plugin orchestrator for modular software development.
 
-This document is designed to help you get oriented—whether you’re looking for ways to contribute, need guidance on how to get started, or want to share your work with the community. We know it can be challenging to figure out where to begin, or frustrating if you’re eager to help but unsure of the process. Our goal is to make contributing to PlugHub as clear and accessible as possible, whether you’re new to open source or an experienced developer.
+This document is designed to help you get oriented—whether you're looking for ways to contribute, need guidance on how to get started, or want to share your work with the community. We know it can be challenging to figure out where to begin, or frustrating if you're eager to help but unsure of the process. Our goal is to make contributing to PlugHub as clear and accessible as possible, whether you're new to open source or an experienced developer.
 
-You'll find information here on how to discover tasks, contribute effectively, and collaborate with others. If you already know what you want to work on, you’ll also find step-by-step instructions to help you get your contributions reviewed and merged into the project.
+You'll find information here on how to discover tasks, contribute effectively, and collaborate with others. If you already know what you want to work on, you'll also find step-by-step instructions to help you get your contributions reviewed and merged into the project.
 
-We’re glad to have you here—let’s build something great together!
+We're glad to have you here—let's build something great together!
 
 ## Table of Contents
 
@@ -37,23 +37,23 @@ In every successful software project, tasks are divided into manageable componen
 -   **[Technical Writer](#technical-writer)** – Someone who can clarify complex concepts and help others understand how to use or contribute to PlugHub.
 -   **[Programmer](#programmer)** – Someone who implements new features, fixes bugs, and helps evolve the codebase.
 
-While these are some of the primary roles, there are many ways to contribute—even if you’re not a programmer or a technical writer. Documentation always benefits from new eyes and improvements, whether it’s fixing typos, updating outdated information, or adding new tutorials and explanations. Reporting and investigating bugs, researching feature requests, and participating in discussions are all valuable contributions.
+While these are some of the primary roles, there are many ways to contribute—even if you're not a programmer or a technical writer. Documentation always benefits from new eyes and improvements, whether it's fixing typos, updating outdated information, or adding new tutorials and explanations. Reporting and investigating bugs, researching feature requests, and participating in discussions are all valuable contributions.
 
 Many contributors wear multiple hats: a programmer might help with documentation, a technical writer might evangelize PlugHub at events, and a quality controller might propose new features. These roles are meant as a guide for organizing work, not as strict boundaries.
 
-When contributing, please remember that we adhere to the [Contributor Covenant Code of Conduct](../../.github/CODE_OF_CONDUCT.md), and we expect all community members to do the same. Take a moment to review this document if you haven’t already.
+When contributing, please remember that we adhere to the [Contributor Covenant Code of Conduct](../../.github/CODE_OF_CONDUCT.md), and we expect all community members to do the same. Take a moment to review this document if you haven't already.
 
 
 ## Evangelist
-This is by far the most open-ended of the roles—there’s no telling who might discover PlugHub, become passionate about it, and want to share it with others. We welcome and encourage your enthusiasm for spreading the word about PlugHub! However, we ask that you keep a few important guidelines in mind:
+This is by far the most open-ended of the roles—there's no telling who might discover PlugHub, become passionate about it, and want to share it with others. We welcome and encourage your enthusiasm for spreading the word about PlugHub! However, we ask that you keep a few important guidelines in mind:
 
 ### Prohibitions
 - **No Lying** – Do not provide false or misleading information about PlugHub, its developers, its community, contributors (past, present, or future), or anyone or anything related to the project.
 - **Post to Appropriate Places** – Only share information about PlugHub in venues where it is relevant and welcome.
-- **Respect Others’ Disinterest** – If a community or individual is not interested in PlugHub, please respect their wishes and do not persist or become a nuisance.
+- **Respect Others' Disinterest** – If a community or individual is not interested in PlugHub, please respect their wishes and do not persist or become a nuisance.
 - **No Hype** – Avoid over-promising or creating unrealistic expectations. Progress happens at its own pace, and hype can lead to disappointment.
 
-Outside of these points, feel free to share PlugHub’s virtues and invite others to join our community. Let developers and users know they are welcome to contribute in any way they can. Ultimately, PlugHub is about people and our shared vision—not just code, documents, or assets.
+Outside of these points, feel free to share PlugHub's virtues and invite others to join our community. Let developers and users know they are welcome to contribute in any way they can. Ultimately, PlugHub is about people and our shared vision—not just code, documents, or assets.
 
 
 ## Quality Controller
@@ -93,7 +93,7 @@ If you have an idea for the next great PlugHub feature, let us know by following
 3. **Engage in Discussion:**  
    Check back often, or enable notifications, in case others have questions or feedback about your proposal.
 4. **Approval Process:**  
-   You’ll know your feature is accepted when it receives the "approved" label.
+   You'll know your feature is accepted when it receives the "approved" label.
     - If your feature depends on multiple requests, it will not be merged until all dependencies are complete.
     - Remember, even simple changes can have wide-ranging effects and must be fully explored before implementation.
     - Not all features can be added immediately, even if accepted; features are released in an orderly, maintainable way.
@@ -102,7 +102,7 @@ If you have an idea for the next great PlugHub feature, let us know by following
 1. **Check for Existing Documentation Requests:**  
    Review [open documentation requests](../../issues?q=label%3Adocumentation+is%3Aopen) to see if your suggestion has already been made.
     - Ask questions or discuss implementation details in the issue thread, or join our [Discord](https://discord.com/invite/mWDHDqkzeR) for real-time discussion.
-    - If you find a similar request that’s missing something critical, comment on it to expand the discussion.
+    - If you find a similar request that's missing something critical, comment on it to expand the discussion.
 2. **Create a New Documentation Request:**  
    Open a [Documentation Request](../../issues/new?template=request-documentation.md) explaining your proposed documentation changes or additions.
     - Be as detailed as possible: describe what the documentation should cover and what key areas need to be addressed.
@@ -114,9 +114,9 @@ If you have an idea for the next great PlugHub feature, let us know by following
 
 
 ## Technical Writer
-Technical Writers are the backbone of a well-organized project. PlugHub’s success relies on clear, accessible, and up-to-date documentation so that contributors, users, and integrators can all stay on the same page.
+Technical Writers are the backbone of a well-organized project. PlugHub's success relies on clear, accessible, and up-to-date documentation so that contributors, users, and integrators can all stay on the same page.
 
-Unlike traditional projects where documentation is often an afterthought, PlugHub treats documentation as a first-class priority. As PlugHub evolves through many iterations, the documentation must also adapt and grow. If you’re excited by the challenge of keeping pace with a dynamic project—and helping others succeed—this role is for you!
+Unlike traditional projects where documentation is often an afterthought, PlugHub treats documentation as a first-class priority. As PlugHub evolves through many iterations, the documentation must also adapt and grow. If you're excited by the challenge of keeping pace with a dynamic project—and helping others succeed—this role is for you!
 
 ### Types of Documentation We Need
 - **Code-Level Documentation**  
@@ -150,7 +150,7 @@ Unlike traditional projects where documentation is often an afterthought, PlugHu
    - Be responsive to questions or requested changes during review.
 6. Your Pull Request will be reviewed and, if approved, merged.
    - If your documentation is tied to a feature or asset issue, merging may wait until all related work is complete.
-   - Once merged, you’ll be recognized as an official contributor!
+   - Once merged, you'll be recognized as an official contributor!
 
 
 ## Programmer
@@ -165,7 +165,7 @@ Programmers are responsible for implementing features proposed by Product Design
     - If you have expertise relevant to an assigned issue, offer your help.
     - The assigned contributor has final say on implementation details for their issue.
         - If you fundamentally disagree with an approach, voice your concerns in the Issue and consider submitting a future Feature Request to propose an alternative.
-    - Not all issues or contributors will require assistance—don’t take it personally if help isn’t needed.
+    - Not all issues or contributors will require assistance—don't take it personally if help isn't needed.
 3. **Submit your own [Feature Request](#how-to-open-a-feature-request):**
     - If you have an idea for a new feature or improvement, follow the process for submitting a feature request.
 
@@ -187,7 +187,7 @@ Programmers are responsible for implementing features proposed by Product Design
     - Be responsive to questions or requested changes during review.
 8. **Your Pull Request will be reviewed and, if approved, merged.**
     - If your code depends on related Asset or Documentation Issues, merging may wait until all dependencies are resolved.
-    - Once merged, you’ll be recognized as an official contributor!
+    - Once merged, you'll be recognized as an official contributor!
 
 
 ## Attribution

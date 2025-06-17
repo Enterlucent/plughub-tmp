@@ -17,17 +17,21 @@ jobs:
             rid: win-x64
             artifact_name: PlugHub-Desktop-win-x64.zip
             is_browser: false
+            solution_file: PlugHub.Desktop.sln
           - os: ubuntu-latest
             rid: linux-x64
             artifact_name: PlugHub-Desktop-linux-x64.zip
             is_browser: false
+            solution_file: PlugHub.Desktop.sln
           - os: macos-latest
             rid: osx-x64
             artifact_name: PlugHub-Desktop-osx-x64.zip
             is_browser: false
+            solution_file: PlugHub.Desktop.sln
           - os: ubuntu-latest
             artifact_name: PlugHub-Web.zip
             is_browser: true
+            solution_file: PlugHub.Web.sln
 
     runs-on: ${{ matrix.os }}
 
@@ -51,7 +55,7 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore all projects
-        run: dotnet restore PlugHub.sln
+        run: dotnet restore ${{ matrix.solution_file }}
 
       - name: Install wasm-tools workload (for browser)
         if: matrix.is_browser == true
@@ -59,11 +63,11 @@ jobs:
 
       - name: Build (Release)
         if: matrix.is_browser == false
-        run: dotnet build --configuration Release -maxcpucount:1
+        run: dotnet build ${{ matrix.solution_file }} --configuration Release -maxcpucount:1
 
       - name: Test
         if: matrix.is_browser == false
-        run: dotnet test --configuration Release --no-build --verbosity normal
+        run: dotnet test ${{ matrix.solution_file }} --configuration Release --no-build --verbosity normal
 
       - name: Publish self-contained app (${{ matrix.rid }})
         if: matrix.is_browser == false
