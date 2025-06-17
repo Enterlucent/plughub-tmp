@@ -17,8 +17,11 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
+        solution:
+          - PlugHub.sln
+          - PlugHub.Web.sln
     runs-on: ${{ matrix.os }}
-    
+
     steps:
       - name: Checkout repository (with LFS)
         uses: actions/checkout@v4
@@ -26,18 +29,22 @@ jobs:
           lfs: true
 
       - name: Ensure LFS files are present
-        run: git lfs pull          
+        run: git lfs pull
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
+      - name: Install wasm-tools workload (for web)
+        if: endsWith(matrix.solution, '.Web.sln')
+        run: dotnet workload install wasm-tools
+
       - name: Restore Dependencies
-        run: dotnet restore
+        run: dotnet restore ${{ matrix.solution }}
 
       - name: Build Solution
-        run: dotnet build --configuration Release --no-restore -maxcpucount:1
+        run: dotnet build ${{ matrix.solution }} --configuration Release --no-restore -maxcpucount:1
 
       - name: Run Tests
-        run: dotnet test --configuration Release --no-build --verbosity normal
+        run: dotnet test ${{ matrix.solution }} --configuration Release --no-build --verbosity normal
