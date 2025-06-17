@@ -18,5 +18,5 @@ jobs:
       uses: xometry/gitlab-mirror-action@master
       env:
         GITLAB_REPOSITORY: "https://git.enterlucent.com:1337/enterlucent/enterlucent-applications/plughub.git"
-        GITLAB_USERNAME: "your-username"
+        GITLAB_USERNAME: "gitlab-bot"
         GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
