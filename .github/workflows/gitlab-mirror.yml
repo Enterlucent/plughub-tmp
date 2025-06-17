@@ -18,4 +18,4 @@ jobs:
         fetch-depth: 0
         ref: main
     - run: git remote add gitlab https://github:${{ secrets.GITLAB_PASSWORD }}@git.enterlucent.com:1337/enterlucent/enterlucent-applications/plughub.git
-    - run: git push --mirror github
+    - run: git push --mirror gitlab
