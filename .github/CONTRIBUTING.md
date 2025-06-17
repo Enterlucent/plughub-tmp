@@ -31,11 +31,11 @@ We're glad to have you here—let's build something great together!
 ## Getting Started
 In every successful software project, tasks are divided into manageable components, each tackled by contributors with the passion and expertise to see them through. At PlugHub, these contributions span a variety of roles, each vital to the health and progress of the project:
 
--   **[Evangelist](#evangelist)** – Someone who deeply understands and believes in PlugHub, helping to connect and grow the community.
--   **[Quality Controller](#quality-controller)** – Someone who enjoys testing the limits of the system, identifying issues, and ensuring PlugHub remains robust and reliable.
--   **[Product Designer](#product-designer)** - Someone focuses on defining features, user experience, and overall product direction.
--   **[Technical Writer](#technical-writer)** – Someone who can clarify complex concepts and help others understand how to use or contribute to PlugHub.
--   **[Programmer](#programmer)** – Someone who implements new features, fixes bugs, and helps evolve the codebase.
+-   [Evangelist](#evangelist) – Someone who deeply understands and believes in PlugHub, helping to connect and grow the community.
+-   [Quality Controller](#quality-controller) – Someone who enjoys testing the limits of the system, identifying issues, and ensuring PlugHub remains robust and reliable.
+-   [Product Designer](#product-designer) - Someone focuses on defining features, user experience, and overall product direction.
+-   [Technical Writer](#technical-writer) – Someone who can clarify complex concepts and help others understand how to use or contribute to PlugHub.
+-   [Programmer](#programmer) – Someone who implements new features, fixes bugs, and helps evolve the codebase.
 
 While these are some of the primary roles, there are many ways to contribute—even if you're not a programmer or a technical writer. Documentation always benefits from new eyes and improvements, whether it's fixing typos, updating outdated information, or adding new tutorials and explanations. Reporting and investigating bugs, researching feature requests, and participating in discussions are all valuable contributions.
 
@@ -170,11 +170,16 @@ Programmers are responsible for implementing features proposed by Product Design
     - If you have an idea for a new feature or improvement, follow the process for submitting a feature request.
 
 ### How to Submit Code
+
 1. **Set up your [Development Environment](/docs/Dev.Env.Win10.md).**
 2. **[Find an issue](#how-to-find-something-to-do) to resolve.**
 3. **[Fork](https://help.github.com/articles/fork-a-repo/) the [PlugHub repository](https://github.com/enterlucent/plughub/).**
 4. **[Create a new branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/)**  
-   Use the format `issue#{issue-id}-{your-github-user}` (e.g., `issue#224-mdwigley`).
+   Use the format `issue#{issue-id}-{your-github-user}` (e.g., `issue#224-mdwigley`) for branches that resolve a single issue.  
+   If your branch will resolve multiple issues, include each issue number separated by `#`, like so:  
+   `issues#123#124#125-{your-github-user}` (e.g., `issues#123#124#125-mdwigley`).  
+   This makes it clear which issues are being addressed by the branch and helps with tracking in the repository.
+[1] https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/
 5. **[Update submodules](https://gist.github.com/gitaarik/8735255#keeping-your-submodules-up-to-date)** as needed.
 6. **Make your changes on your new branch**:
     - [Keep your fork in sync](https://help.github.com/articles/syncing-a-fork/) with the main repository.
@@ -187,7 +192,26 @@ Programmers are responsible for implementing features proposed by Product Design
     - Be responsive to questions or requested changes during review.
 8. **Your Pull Request will be reviewed and, if approved, merged.**
     - If your code depends on related Asset or Documentation Issues, merging may wait until all dependencies are resolved.
-    - Once merged, you'll be recognized as an official contributor!
+    - Once merged, you'll be recognized as an official contributor!.
+
+### Commit Message Emoji Legend
+
+We squash all commits before merging, so you’ll see a single, meaningful commit message for each pull request in the main branch. We use emojis in these messages to quickly convey the type of change. Use the table below as a legend for interpreting commit messages you see in the repository:
+
+| Emoji | Purpose             | Example Commit Message              |
+|-------|---------------------|-------------------------------------|
+| ✨    | New feature         | ✨ Add user authentication           |
+| 🐛    | Bug fix             | 🐛 Fix login redirect issue          |
+| 🧼    | Code cleanup        | 🧼 Remove unused imports             |
+| 🔥    | Remove code/files   | 🔥 Delete deprecated API endpoints   |
+| 📝    | Documentation       | 📝 Update README with setup steps    |
+| ♻️    | Refactor            | ♻️ Refactor payment processing logic |
+| 🚀    | Performance         | 🚀 Improve query response time       |
+| ✅    | Tests               | ✅ Add unit tests for user model     |
+
+> **Note:** You do not need to use these emojis in your individual commits. They are used in the final, squashed commit messages to keep our history clear and easy to scan.
+
+For more examples and inspiration, see [gitmoji.dev](https://www.gitmoji.dev/).
 
 
 ## Attribution
