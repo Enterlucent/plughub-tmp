@@ -54,12 +54,12 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore all projects
-        run: dotnet restore ${{ matrix.solution_file }}
-
       - name: Install wasm-tools workload (for browser)
         if: matrix.is_browser == true
         run: dotnet workload install wasm-tools
+
+      - name: Restore all projects
+        run: dotnet restore ${{ matrix.solution_file }}
 
       - name: Build (Release)
         if: matrix.is_browser == false
