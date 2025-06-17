@@ -17,7 +17,7 @@ jobs:
             rid: win-x64
             artifact_name: PlugHub-Desktop-win-x64.zip
             is_browser: false
-            solution_file: PlugHub.Desktop.sln
+            solution_file: PlugHub.sln
           - os: ubuntu-latest
             rid: linux-x64
             artifact_name: PlugHub-Desktop-linux-x64.zip
