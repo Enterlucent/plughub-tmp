@@ -21,7 +21,7 @@ body:
     id: expected_behavior
     attributes:
       label: Expected Behavior
-      description: Tell us what you expected to happen.
+      render: bash  # or any supported language
     validations:
       required: true
 
