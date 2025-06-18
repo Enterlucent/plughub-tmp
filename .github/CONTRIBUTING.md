@@ -41,7 +41,7 @@ While these are some of the primary roles, there are many ways to contribute—e
 
 Many contributors wear multiple hats: a programmer might help with documentation, a technical writer might evangelize PlugHub at events, and a quality controller might propose new features. These roles are meant as a guide for organizing work, not as strict boundaries.
 
-When contributing, please remember that we adhere to the [Contributor Covenant Code of Conduct](../../.github/CODE_OF_CONDUCT.md), and we expect all community members to do the same. Take a moment to review this document if you haven't already.
+When contributing, please remember that we adhere to the [Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md), and we expect all community members to do the same. Take a moment to review this document if you haven't already.
 
 
 ## Evangelist
@@ -60,10 +60,10 @@ Outside of these points, feel free to share PlugHub's virtues and invite others 
 These are the true warriors, fighting in the trenches to bring a better experience for the rest, it can not be stressed enough how important good Quality Controllers are to a project.  Many software houses tend to under value the work that Quality Controllers provide and often leave it to the community to debug (oh ...) their code, assets and documentation.  Here we understand the absolute need for the services they provide and are grateful for every detailed bug report provided.
 
 ### How to Open a Bug Report
-1. Determine if the bug has already been [reported](../../issues?q=label%3Abug+is%3Aopen)
+1. Determine if the bug has already been [reported](https://github.com/enterlucent/plughub/issues?q=label%3Abug+is%3Aopen)
     * If you find that the Issue has already been opened then a new Issue is not needed.
     * Feel free to add your experiences to bug reports and to reopen bug Issues if it crops up again.
-2. Create a "Bug Report" on the [Issues Tracker](../../issues/new?template=report-bug.yml).
+2. Create a "Bug Report" on the [Issues Tracker](https://github.com/enterlucent/plughub/issues/new?template=report-bug.yml).
     * Make sure that you are very detailed with what you are experiencing
     * If this is a documentation bug then add documentation to the labels
 3. Check back often, or enable the notification options, in case others have questions or need further clarification
@@ -75,7 +75,7 @@ Product Designers contribute to PlugHub by shaping how its features, workflows, 
 With the insight and creativity of dedicated Product Designers, PlugHub will continue to grow into a robust, user-friendly, and industry-leading plugin orchestrator. Your ideas and attention to detail help ensure that every aspect of PlugHub meets the needs of our diverse community.
 
 ### When Is It a Feature Request?
-Distinguishing between a bug and a feature request can sometimes be nuanced. In general, a [Feature Request](../../issues/new?template=request-feature.md) is appropriate when you are proposing a change or addition to the current, expected behavior of PlugHub. Here are a few examples of what would constitute a feature request:
+Distinguishing between a bug and a feature request can sometimes be nuanced. In general, a [Feature Request](https://github.com/enterlucent/plughub/issues/new?template=request-feature.md) is appropriate when you are proposing a change or addition to the current, expected behavior of PlugHub. Here are a few examples of what would constitute a feature request:
 
 - An element or capability is completely missing from the project.
 - Current behavior is missing a critical component needed for completeness.
@@ -85,10 +85,10 @@ If you have an idea for the next great PlugHub feature, let us know by following
 
 ### How to Open a Feature Request
 1. Check for Existing Requests:  
-   Search [open feature requests](../../issues?q=label%3Aenhancement+is%3Aopen) to see if your idea has already been suggested.
+   Search [open feature requests](https://github.com/enterlucent/plughub/issues?q=label%3Aenhancement+is%3Aopen) to see if your idea has already been suggested.
     - If a similar request exists, expand on it by commenting rather than opening a duplicate.
 2. Create a New Feature Request:  
-   Open a [Feature Request](../../issues/new?template=request-feature.md) on the Issues Tracker.
+   Open a [Feature Request](https://github.com/enterlucent/plughub/issues/new?template=request-feature.md) on the Issues Tracker.
     - Be as detailed as possible: describe what the feature should accomplish, how it might be implemented, and its impact on other features.
 3. Engage in Discussion:  
    Check back often, or enable notifications, in case others have questions or feedback about your proposal.
@@ -100,11 +100,11 @@ If you have an idea for the next great PlugHub feature, let us know by following
 
 ### How to Open a Documentation Request
 1. Check for Existing Documentation Requests:  
-   Review [open documentation requests](../../issues?q=label%3Adocumentation+is%3Aopen) to see if your suggestion has already been made.
+   Review [open documentation requests](https://github.com/enterlucent/plughub/issues?q=label%3Adocumentation+is%3Aopen) to see if your suggestion has already been made.
     - Ask questions or discuss implementation details in the issue thread, or join our [Discord](https://discord.com/invite/mWDHDqkzeR) for real-time discussion.
     - If you find a similar request that's missing something critical, comment on it to expand the discussion.
 2. Create a New Documentation Request:  
-   Open a [Documentation Request](../../issues/new?template=request-documentation.md) explaining your proposed documentation changes or additions.
+   Open a [Documentation Request](https://github.com/enterlucent/plughub/issues/new?template=request-documentation.md) explaining your proposed documentation changes or additions.
     - Be as detailed as possible: describe what the documentation should cover and what key areas need to be addressed.
 3. Participate in the Review:  
    Others may ask questions or request changes, so check back or enable notifications.
@@ -130,12 +130,13 @@ Unlike traditional projects where documentation is often an afterthought, PlugHu
 
 ### How to Find Documentation Tasks
 1. Check the Issue Tracker:  
-   Look for [Documentation Requests](../../issues?q=label%3Adocumentation,approved+is%3Aopen+no%3Aassignee) that are open, “approved,” and unassigned.  
+   Look for [Documentation Requests](https://github.com/enterlucent/plughub/issues?q=label%3Adocumentation,approved+is%3Aopen+no%3Aassignee) that are open, “approved,” and unassigned.  
    _Only begin work on issues that meet these criteria._
 2. Review Existing Documentation:  
    There may be bugs or outdated sections in the current docs:
-   - [Project Documentation](../../tree/main/docs/)
-   - [GitHub Pages](https://enterlucent.github.io/plughub/)
+   - [Project Documentation](../docs/)
+   - [GitHub Pages](https://enterlucent.github.io/PlugHub/)
+   - [Project Wiki](https://github.com/Enterlucent/PlugHub/wiki)
 3. Submit Your Own Request:  
    If you spot missing or unclear documentation, submit a [Documentation Request](#how-to-open-a-documentation-request).
 
@@ -161,7 +162,7 @@ Unlike traditional projects where documentation is often an afterthought, PlugHu
 Programmers are responsible for implementing features proposed by Product Designers, maintaining code quality, and integrating assets and documentation contributed by the community.
 
 ### How to Find Programming Tasks
-1. Browse the [Issue Tracker](../../issues?q=label%3Aenhancement,bug,approved+is%3Aopen+no%3Aassignee):
+1. Browse the [Issue Tracker](https://github.com/enterlucent/plughub/issues?q=label%3Aenhancement,bug,approved+is%3Aopen+no%3Aassignee):
     - Look for open, “approved,” and unassigned issues labeled as `enhancement` or `bug`.
     - Ask questions in the Issue thread or join the [Discord](https://discord.com/invite/mWDHDqkzeR) server for real-time discussion.
     - **Only begin work on issues that are open, approved, and unassigned.**
@@ -175,8 +176,8 @@ Programmers are responsible for implementing features proposed by Product Design
 
 ### How to Submit Code
 
-1. Set up your [Development Environment](/docs/Dev.Env.Win10.md).
-2. [Find an issue](#how-to-find-something-to-do) to resolve.
+1. Set up your [Development Environment](../docs/Dev.Env.Win10.md).
+2. [Find an issue](#how-to-find-programming-tasks) to resolve.
 3. [Fork](https://help.github.com/articles/fork-a-repo/) the [PlugHub repository](https://github.com/enterlucent/plughub/).
 4. [Create a new branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/)
    Use the format `issue#{issue-id}-{your-github-user}` (e.g., `issue#224-mdwigley`) for branches that resolve a single issue.  
@@ -188,14 +189,14 @@ Programmers are responsible for implementing features proposed by Product Design
     - [Keep your fork in sync](https://help.github.com/articles/syncing-a-fork/) with the main repository.
     - If you need implementation help, request the "Help Wanted" label on the issue and ask for assistance on [Discord](https://discord.com/invite/mWDHDqkzeR).
     - Ensure all files are whitespace-formatted (the default settings for Visual Studio or MonoDevelop are usually sufficient).
-    - If using Visual Studio, apply the [official format settings](/docs/assets/files/CONTRIBUTING/.editorconfig).
+    - If using Visual Studio, apply the [official format settings](../docs/assets/files/CONTRIBUTING/.editorconfig).
     - Comment your code with both inline and construct-level documentation.
         - We use Doxygen for code-level documentation.
 7. When finished, submit a [Pull Request](https://help.github.com/articles/about-pull-requests/) containing only the changes relevant to the issue.
     - Be responsive to questions or requested changes during review.
 8. Your Pull Request will be reviewed and, if approved, merged.
     - If your code depends on related Asset or Documentation Issues, merging may wait until all dependencies are resolved.
-    - Once merged, you'll be recognized as an official contributor!.
+    - Once merged, you'll be recognized as an official contributor!
 
 ### Commit Message Emoji Legend
 

@@ -85,7 +85,7 @@ If you have created a resource relevant to PlugHub and would like it featured on
 > Please use the General category for these requests, not GitHub Issues. This helps keep actionable issues separate from community and promotional content, and makes it easier for maintainers to review and organize submissions.
 
 ## Contributing
-Please review our [CONTRIBUTING](CONTRIBUTING.md) guidelines for details on how to participate, coding standards, and the development workflow.  
+Please review our [CONTRIBUTING](.github/CONTRIBUTING.md) guidelines for details on how to participate, coding standards, and the development workflow.  
 Refer to our [Design Document](docs/Design.md) and [Code of Conduct](.github/CODE_OF_CONDUCT.md) for further information.
 
 ## Authors
@@ -99,7 +99,7 @@ See the list of [contributors](../../graphs/contributors) who have participated 
 This repository uses **dual licensing**:
 
 ### **Host Application & Shared Libraries**
-- **LGPL-3.0** ([View License](LICENSE))
+- **LGPL-3.0** ([View License](LICENSE.md))
   - Applies to all code **except** official plugins.
   - Permits use in proprietary software.
   - Modifications to LGPL code must be shared under LGPL.

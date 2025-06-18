@@ -1,7 +1,8 @@
 # PlugHub
 
-[![License: LGPL](https://img.shields.io/badge/License-LGPL-blue.svg)](../LICENSE)
+[![License: LGPL](https://img.shields.io/badge/License-LGPL-blue.svg)](../LICENSE.md)
 [![Join us on Discord](https://img.shields.io/badge/Discord-Join-blue?logo=discord)](https://discord.com/invite/mWDHDqkzeR)
+[![Release](https://img.shields.io/github/v/release/enterlucent/plughub?include_prereleases)](https://github.com/Enterlucent/PlugHub/releases)
 
 
 **PlugHub** is an enterprise-grade application designed around a modular plugin architecture, enabling developers and organizations to build, manage, and deploy extensible software systems with ease. It provides a robust framework where plugins serve as independent, interchangeable components that seamlessly integrate into a unified host application.
@@ -30,10 +31,10 @@ With PlugHub, you can rapidly extend functionality, validate plugin compatibilit
 ## What Will You Find Here?
 The PlugHub GitHub repository is your central resource for all things PlugHub:
 
-- [Discussions](../../discussions) – Ask questions, share ideas, and connect with the community
-- [Issues](../../issues) – Submit feature requests, bug reports, and documentation suggestions
-- [Project Page](..) – Source code, releases, and project documentation
-- [Wiki](../../wiki) – In-depth guides, reference material, and technical documentation
+- [Discussions](https://github.com/Enterlucent/PlugHub/discussions/categories/general) – Ask questions, share ideas, and connect with the community
+- [Issues](https://github.com/Enterlucent/PlugHub/issues) – Submit feature requests, bug reports, and documentation suggestions
+- [Project Page](https://github.com/Enterlucent/PlugHub) – Source code, releases, and project documentation
+- [Wiki](https://github.com/Enterlucent/PlugHub/wiki) – In-depth guides, reference material, and technical documentation
 
 # Contact
 We welcome your feedback, questions, and contributions!
@@ -41,5 +42,5 @@ We welcome your feedback, questions, and contributions!
 ## Communications
 - [Twitter](https://twitter.com/enterlucent) – Announcements and updates
 - [Discord](https://discord.com/invite/mWDHDqkzeR) – Real-time community chat and support
-- [Forum](../../discussions) – Community Q&A and long-form discussions
+- [Forum](https://github.com/Enterlucent/PlugHub/discussions/categories/announcements) – Community Q&A and long-form discussions
 - [Direct](mailto:contact@enterlucent.com) – For private or business inquiries

@@ -3,34 +3,42 @@ name: Mirror to GitLab
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
 
 permissions:
-  contents: read    
+  contents: read
 
 jobs:
-  build:
+  mirror:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
           ref: main
           lfs: true
 
-      - name: Check required variables
+      - name: Validate environment
         run: |
           if [ -z "${{ vars.GITLAB_HOST }}" ]; then
-            echo "Error: GITLAB_HOST is not set. Please add it as a repository variable."
+            echo "::error::GITLAB_HOST missing"
             exit 1
           fi
           if [ -z "${{ vars.GITLAB_PATH }}" ]; then
-            echo "Error: GITLAB_PATH is not set. Please add it as a repository variable."
+            echo "::error::GITLAB_PATH missing"
             exit 1
           fi
 
-      - run: git lfs fetch --all
-      - run: git remote add gitlab https://github:${{ secrets.GITLAB_PASSWORD }}@${{ vars.GITLAB_HOST }}${{ vars.GITLAB_PATH }}
-      - run: git push --all gitlab
-      - run: git push --tags gitlab
+      - name: Fetch LFS assets
+        run: git lfs fetch --all
+
+      - name: Configure GitLab remote
+        run: |
+          git remote add gitlab https://github:${{ secrets.GITLAB_PASSWORD }}@${{ vars.GITLAB_HOST }}${{ vars.GITLAB_PATH }}
+          git config remote.gitlab.fetch '+refs/heads/*:refs/remotes/gitlab/*'
+          git config remote.gitlab.push '+refs/heads/*:refs/heads/*'
+          git config --add remote.gitlab.push '+refs/tags/*:refs/tags/*'
+
+      - name: Execute mirror push
+        run: git push gitlab --force --prune --all --tags
