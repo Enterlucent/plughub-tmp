@@ -2,7 +2,6 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
-using PlugHub.Shared;
 using PlugHub.ViewModels;
 using PlugHub.Views;
 using System.Linq;
@@ -11,13 +10,9 @@ namespace PlugHub;
 
 public partial class App : Application
 {
-    public PlugHubSharedType? SharedType;
-
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
-
-        this.SharedType = new PlugHubSharedType();
     }
 
     public override void OnFrameworkInitializationCompleted()
