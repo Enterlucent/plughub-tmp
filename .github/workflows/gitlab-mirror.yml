@@ -30,22 +30,6 @@ jobs:
             exit 1
           fi
 
-      - name: Extract host and port
-        id: extract_host_port
-        run: |
-          HOST="${{ vars.GITLAB_HOST }}"
-          HOST_ONLY="${HOST%%:*}"
-          PORT_ONLY="${HOST##*:}"
-          echo "host=$HOST_ONLY" >> $GITHUB_OUTPUT
-          echo "port=$PORT_ONLY" >> $GITHUB_OUTPUT
-
-      - name: Check if GitLab host and port are reachable
-        uses: nrukavkov/open-ports-check-action@v1
-        with:
-          host: ${{ steps.extract_host_port.outputs.host }}
-          port: ${{ steps.extract_host_port.outputs.port }}
-          needFail: 'true'
-
       - run: git lfs fetch --all
       - run: git remote add gitlab https://github:${{ secrets.GITLAB_PASSWORD }}@${{ vars.GITLAB_HOST }}${{ vars.GITLAB_PATH }}
       - run: git push --all gitlab
