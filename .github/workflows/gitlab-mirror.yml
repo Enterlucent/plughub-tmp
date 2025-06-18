@@ -41,4 +41,6 @@ jobs:
           git config --add remote.gitlab.push '+refs/tags/*:refs/tags/*'
 
       - name: Execute mirror push
-        run: git push gitlab --force --prune --all --tags
+        run: |
+          git push gitlab --force --prune --all
+          git push gitlab --force --prune --tags
