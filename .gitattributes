@@ -27,4 +27,4 @@
 *.woff2 filter=lfs diff=lfs merge=lfs -text
 
 # Linguist
-*.axaml linguist-language=XML
+*.axaml linguist-language=XAML
