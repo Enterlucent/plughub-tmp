@@ -19,6 +19,6 @@ jobs:
           ref: main
           lfs: true
       - run: git lfs fetch --all
-      - run: git remote add gitlab https://github:${{ secrets.GITLAB_PASSWORD }}@git.enterlucent.com:1337/enterlucent/enterlucent-applications/plughub.git
+      - run: git remote add gitlab https://github:${{ secrets.GITLAB_PASSWORD }}@${{ vars.GITLAB_HOST }}${{ vars.GITLAB_PATH }}
       - run: git push --all gitlab
       - run: git push --tags gitlab
