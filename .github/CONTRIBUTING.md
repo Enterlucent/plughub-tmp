@@ -75,7 +75,7 @@ Product Designers contribute to PlugHub by shaping how its features, workflows, 
 With the insight and creativity of dedicated Product Designers, PlugHub will continue to grow into a robust, user-friendly, and industry-leading plugin orchestrator. Your ideas and attention to detail help ensure that every aspect of PlugHub meets the needs of our diverse community.
 
 ### When Is It a Feature Request?
-Distinguishing between a bug and a feature request can sometimes be nuanced. In general, a **feature request** is appropriate when you are proposing a change or addition to the current, expected behavior of PlugHub. Here are a few examples of what would constitute a feature request:
+Distinguishing between a bug and a feature request can sometimes be nuanced. In general, a [Feature Request](../../issues/new?template=request-feature.md) is appropriate when you are proposing a change or addition to the current, expected behavior of PlugHub. Here are a few examples of what would constitute a feature request:
 
 - An element or capability is completely missing from the project.
 - Current behavior is missing a critical component needed for completeness.
@@ -84,31 +84,31 @@ Distinguishing between a bug and a feature request can sometimes be nuanced. In 
 If you have an idea for the next great PlugHub feature, let us know by following the process below!
 
 ### How to Open a Feature Request
-1. **Check for Existing Requests:**  
+1. Check for Existing Requests:  
    Search [open feature requests](../../issues?q=label%3Aenhancement+is%3Aopen) to see if your idea has already been suggested.
     - If a similar request exists, expand on it by commenting rather than opening a duplicate.
-2. **Create a New Feature Request:**  
+2. Create a New Feature Request:  
    Open a [Feature Request](../../issues/new?template=request-feature.md) on the Issues Tracker.
     - Be as detailed as possible: describe what the feature should accomplish, how it might be implemented, and its impact on other features.
-3. **Engage in Discussion:**  
+3. Engage in Discussion:  
    Check back often, or enable notifications, in case others have questions or feedback about your proposal.
-4. **Approval Process:**  
+4. Approval Process:  
    You'll know your feature is accepted when it receives the "approved" label.
     - If your feature depends on multiple requests, it will not be merged until all dependencies are complete.
     - Remember, even simple changes can have wide-ranging effects and must be fully explored before implementation.
     - Not all features can be added immediately, even if accepted; features are released in an orderly, maintainable way.
 
 ### How to Open a Documentation Request
-1. **Check for Existing Documentation Requests:**  
+1. Check for Existing Documentation Requests:  
    Review [open documentation requests](../../issues?q=label%3Adocumentation+is%3Aopen) to see if your suggestion has already been made.
     - Ask questions or discuss implementation details in the issue thread, or join our [Discord](https://discord.com/invite/mWDHDqkzeR) for real-time discussion.
     - If you find a similar request that's missing something critical, comment on it to expand the discussion.
-2. **Create a New Documentation Request:**  
+2. Create a New Documentation Request:  
    Open a [Documentation Request](../../issues/new?template=request-documentation.md) explaining your proposed documentation changes or additions.
     - Be as detailed as possible: describe what the documentation should cover and what key areas need to be addressed.
-3. **Participate in the Review:**  
+3. Participate in the Review:  
    Others may ask questions or request changes, so check back or enable notifications.
-4. **Approval:**  
+4. Approval:  
    Your request is accepted when it receives the "approved" label.
     - If your request has multiple parts, it will not be merged until all are complete.
 
@@ -119,30 +119,34 @@ Technical Writers are the backbone of a well-organized project. PlugHub's succes
 Unlike traditional projects where documentation is often an afterthought, PlugHub treats documentation as a first-class priority. As PlugHub evolves through many iterations, the documentation must also adapt and grow. If you're excited by the challenge of keeping pace with a dynamic project—and helping others succeed—this role is for you!
 
 ### Types of Documentation We Need
-- **Code-Level Documentation**  
+- Code-Level Documentation  
   While programmers are responsible for documenting their code, technical writers can help clarify, expand, or improve code comments and API references when needed.
-- **Features and Functions**  
+- Features and Functions  
   Document how PlugHub works, from broad overviews (e.g., “Getting Started with PlugHub”) to detailed guides (e.g., “Configuring Plugin Dependency Resolution”).
-- **Public Relations**  
+- Public Relations  
   Help shape how PlugHub is presented to the world—this includes website content, GitHub Pages, promotional materials, and press releases.
-- **Tutorials and How-To Guides**  
+- Tutorials and How-To Guides  
   Create guides, articles, videos, or step-by-step instructions that help users and developers accomplish specific tasks or solve common problems.
 
 ### How to Find Documentation Tasks
-1. **Check the Issue Tracker:**  
+1. Check the Issue Tracker:  
    Look for [Documentation Requests](../../issues?q=label%3Adocumentation,approved+is%3Aopen+no%3Aassignee) that are open, “approved,” and unassigned.  
    _Only begin work on issues that meet these criteria._
-2. **Review Existing Documentation:**  
+2. Review Existing Documentation:  
    There may be bugs or outdated sections in the current docs:
    - [Project Documentation](../../tree/main/docs/)
    - [GitHub Pages](https://enterlucent.github.io/plughub/)
-3. **Submit Your Own Request:**  
+3. Submit Your Own Request:  
    If you spot missing or unclear documentation, submit a [Documentation Request](#how-to-open-a-documentation-request).
 
 ### How to Submit Documentation
 1. [Find an Issue](#how-to-find-documentation-tasks) to resolve.
 2. [Fork](https://help.github.com/articles/fork-a-repo/) the [PlugHub repository](https://github.com/enterlucent/plughub/).
-3. [Create a new branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/) using the format `issue#{issue-id}-{your-github-user}` (e.g., `issue#224-mdwigley`).
+3. [Create a new branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/):
+   Use the format `issue#{issue-id}-{your-github-user}` (e.g., `issue#224-mdwigley`) for branches that resolve a single issue.  
+   If your branch will resolve multiple issues, include each issue number separated by `#`, like so:  
+   `issues#123#124#125-{your-github-user}` (e.g., `issues#123#124#125-mdwigley`).  
+   This makes it clear which issues are being addressed by the branch and helps with tracking in the repository.
 4. Make your documentation changes or additions on your new branch.
    - [Keep your fork in sync](https://help.github.com/articles/syncing-a-fork/) with the original repository.
    - If you need implementation help, request the "Help Wanted" label on the issue and ask for assistance on [Discord](https://discord.com/invite/mWDHDqkzeR).
@@ -157,40 +161,39 @@ Unlike traditional projects where documentation is often an afterthought, PlugHu
 Programmers are responsible for implementing features proposed by Product Designers, maintaining code quality, and integrating assets and documentation contributed by the community.
 
 ### How to Find Programming Tasks
-1. **Browse the [Issue Tracker](../../issues?q=label%3Aenhancement,bug,approved+is%3Aopen+no%3Aassignee):**
+1. Browse the [Issue Tracker](../../issues?q=label%3Aenhancement,bug,approved+is%3Aopen+no%3Aassignee):
     - Look for open, “approved,” and unassigned issues labeled as `enhancement` or `bug`.
     - Ask questions in the Issue thread or join the [Discord](https://discord.com/invite/mWDHDqkzeR) server for real-time discussion.
     - **Only begin work on issues that are open, approved, and unassigned.**
-2. **Assist Team Members/Contributors already assigned to an Issue:**
+2. Assist Team Members/Contributors already assigned to an Issue:
     - If you have expertise relevant to an assigned issue, offer your help.
     - The assigned contributor has final say on implementation details for their issue.
         - If you fundamentally disagree with an approach, voice your concerns in the Issue and consider submitting a future Feature Request to propose an alternative.
     - Not all issues or contributors will require assistance—don't take it personally if help isn't needed.
-3. **Submit your own [Feature Request](#how-to-open-a-feature-request):**
+3. Submit your own [Feature Request](#how-to-open-a-feature-request):
     - If you have an idea for a new feature or improvement, follow the process for submitting a feature request.
 
 ### How to Submit Code
 
-1. **Set up your [Development Environment](/docs/Dev.Env.Win10.md).**
-2. **[Find an issue](#how-to-find-something-to-do) to resolve.**
-3. **[Fork](https://help.github.com/articles/fork-a-repo/) the [PlugHub repository](https://github.com/enterlucent/plughub/).**
-4. **[Create a new branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/)**  
+1. Set up your [Development Environment](/docs/Dev.Env.Win10.md).
+2. [Find an issue](#how-to-find-something-to-do) to resolve.
+3. [Fork](https://help.github.com/articles/fork-a-repo/) the [PlugHub repository](https://github.com/enterlucent/plughub/).
+4. [Create a new branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/)
    Use the format `issue#{issue-id}-{your-github-user}` (e.g., `issue#224-mdwigley`) for branches that resolve a single issue.  
    If your branch will resolve multiple issues, include each issue number separated by `#`, like so:  
    `issues#123#124#125-{your-github-user}` (e.g., `issues#123#124#125-mdwigley`).  
    This makes it clear which issues are being addressed by the branch and helps with tracking in the repository.
-[1] https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/
-5. **[Update submodules](https://gist.github.com/gitaarik/8735255#keeping-your-submodules-up-to-date)** as needed.
-6. **Make your changes on your new branch**:
+5. [Update submodules](https://gist.github.com/gitaarik/8735255#keeping-your-submodules-up-to-date) as needed.
+6. Make your changes on your new branch:
     - [Keep your fork in sync](https://help.github.com/articles/syncing-a-fork/) with the main repository.
     - If you need implementation help, request the "Help Wanted" label on the issue and ask for assistance on [Discord](https://discord.com/invite/mWDHDqkzeR).
     - Ensure all files are whitespace-formatted (the default settings for Visual Studio or MonoDevelop are usually sufficient).
     - If using Visual Studio, apply the [official format settings](/docs/assets/files/CONTRIBUTING/.editorconfig).
     - Comment your code with both inline and construct-level documentation.
         - We use Doxygen for code-level documentation.
-7. **When finished, submit a [Pull Request](https://help.github.com/articles/about-pull-requests/)** containing only the changes relevant to the issue.
+7. When finished, submit a [Pull Request](https://help.github.com/articles/about-pull-requests/) containing only the changes relevant to the issue.
     - Be responsive to questions or requested changes during review.
-8. **Your Pull Request will be reviewed and, if approved, merged.**
+8. Your Pull Request will be reviewed and, if approved, merged.
     - If your code depends on related Asset or Documentation Issues, merging may wait until all dependencies are resolved.
     - Once merged, you'll be recognized as an official contributor!.
 
