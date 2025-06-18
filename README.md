@@ -86,6 +86,7 @@ If you have created a resource relevant to PlugHub and would like it featured on
 
 ## Contributing
 Please review our [CONTRIBUTING](.github/CONTRIBUTING.md) guidelines for details on how to participate, coding standards, and the development workflow.  
+
 Refer to our [Design Document](docs/Design.md) and [Code of Conduct](.github/CODE_OF_CONDUCT.md) for further information.
 
 ## Authors
