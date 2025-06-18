@@ -24,11 +24,11 @@ With PlugHub, you can rapidly extend functionality, validate plugin compatibilit
    Install plugins as needed to extend functionality.
 
 ## Getting Started
-- **[Getting Information](#how-to-get-information)** – Where to find documentation and support resources.
-- **[Support Questions](#how-to-open-a-support-question)** – Check if your question has already been answered.
-- **[Bug Report](#how-to-submit-a-bug-report)** – See if your issue has already been reported.
-- **[Feature Requests](#how-to-request-a-feature)** – Find out if your idea has already been suggested.
-- **[Site Mention](#how-to-request-a-site-mention)** – Submit community resources for inclusion.
+- [Getting Information](#how-to-get-information) – Where to find documentation and support resources.
+- [Support Questions](#how-to-open-a-support-question) – Check if your question has already been answered.
+- [Bug Report](#how-to-submit-a-bug-report) – See if your issue has already been reported.
+- [Feature Requests](#how-to-request-a-feature) – Find out if your idea has already been suggested.
+- [Site Mention](#how-to-request-a-site-mention) – Submit community resources for inclusion.
 
 ### How to Get Information
 - **Documentation** – Comprehensive guides and references for PlugHub:
@@ -78,7 +78,7 @@ With PlugHub, you can rapidly extend functionality, validate plugin compatibilit
 If you have created a resource relevant to PlugHub and would like it featured on our GitHub Pages:
 
 - Start a new discussion in the [General category](../../discussions/categories/general).
-- Prefix your discussion title with **[PROMO]** (e.g., `[PROMO] mysite.com: PlugHub Plugin Showcase`).
+- Prefix your discussion title with [PROMO]** (e.g., `[PROMO] mysite.com: PlugHub Plugin Showcase`).
 - Respond to any follow-up questions from maintainers.
 - You will be notified if your submission is accepted and published.
 
